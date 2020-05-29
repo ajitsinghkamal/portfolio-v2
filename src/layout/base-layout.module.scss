@@ -1,0 +1,17 @@
+:root {
+	--c-bg: #404040;
+	--c-text: #f2f2f2;
+}
+
+body {
+	height: 100vh;
+	color: var(--c-text);
+	background: var(--c-bg);
+}
+
+.app {
+	margin: 0 auto;
+	width: 70%;
+	min-width: 600px;
+	max-width: 1200px;
+}

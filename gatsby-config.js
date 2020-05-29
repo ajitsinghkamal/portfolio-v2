@@ -37,5 +37,6 @@ module.exports = {
 				},
 			},
 		},
+		`gatsby-plugin-scss-typescript`,
 	],
 };
