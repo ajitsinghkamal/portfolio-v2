@@ -2,7 +2,7 @@ import React, { FunctionComponent } from "react";
 import css from "./nav.module.scss";
 
 const Nav: FunctionComponent = () => (
-	<nav>
+	<nav className={`ft-sans ${css.base}`}>
 		<ul className={css.navList}>
 			<li className={css.navListItem}>
 				<span>About</span>

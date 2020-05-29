@@ -1,0 +1,19 @@
+.base {
+	padding-top: 1.2em;
+}
+.title {
+	font-size: 1.25rem;
+	font-variation-settings: "wght" 530;
+	margin-bottom: 0.3em;
+}
+.year {
+	font-size: 0.875rem;
+	font-style: italic;
+	font-variation-settings: "ital" 1;
+	font-synthesis: none;
+	margin-bottom: 0.5em;
+	font-variant: tabular-nums;
+	small {
+		margin: 0 3px;
+	}
+}
