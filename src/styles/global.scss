@@ -1,3 +1,15 @@
 @import "reset";
 @import "typography";
 @import "default";
+@import "utilities";
+
+:root {
+	--c-bg: #202020;
+	--c-text: #c1c1c1;
+}
+
+body {
+	height: 100vh;
+	color: var(--c-text);
+	background: var(--c-bg);
+}

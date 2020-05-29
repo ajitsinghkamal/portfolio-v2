@@ -1,0 +1,32 @@
+$contentWidth: 700;
+$gutter: 30;
+
+.sidebar {
+	bottom: 0;
+	width: calc(50% - #{$contentWidth / 2}px);
+	padding: 0 #{$gutter}px;
+	text-align: right;
+	z-index: 2;
+}
+
+.page,
+.sidebar {
+	padding-top: 2rem;
+}
+
+.page {
+	width: calc(50% + #{$contentWidth / 2}px);
+	padding: 0 #{$gutter}px;
+	margin-left: auto;
+	&Content {
+		width: #{$contentWidth}px;
+		max-width: 90%;
+		padding: 2em 0;
+	}
+}
+
+.header {
+	width: 100%;
+	right: 0;
+	background: var(--c-bg);
+}

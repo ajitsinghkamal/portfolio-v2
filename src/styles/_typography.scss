@@ -6,10 +6,17 @@
 	font-family: "public";
 	src: url("../fonts/PublicSans.ttf");
 }
+@font-face {
+	font-family: "faustina";
+	src: url("../fonts/Faustina.ttf");
+}
+@font-face {
+	font-family: "crimson";
+	src: url("../fonts/Crimson.ttf");
+}
 
 $ft-sans-serif: public;
-$ft-serif: markazi;
+$ft-serif: crimson;
 
-$ft-stack: #{$ft-sans-serif}, -apple-system, BlinkMacSystemFont, Segoe UI,
-	Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-	sans-serif;
+$ft-stack: #{$ft-serif}, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+	Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
