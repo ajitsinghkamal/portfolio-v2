@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from "react";
 import Header from "@components/header/header.base";
 import Nav from "@components/nav/nav.base";
+import Footer from "@components/footer/footer.base";
 import css from "./layout.module.scss";
 
 const Layout: FunctionComponent = ({ children }) => {
@@ -17,6 +18,9 @@ const Layout: FunctionComponent = ({ children }) => {
 					<main>{children}</main>
 				</div>
 			</div>
+			<footer className={`fixed ${css.footer}`}>
+				<Footer />
+			</footer>
 		</>
 	);
 };

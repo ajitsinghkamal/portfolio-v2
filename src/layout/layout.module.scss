@@ -25,8 +25,15 @@ $gutter: 40;
 	}
 }
 
-.header {
+.header,
+.footer {
 	width: 100%;
 	right: 0;
 	background: var(--c-bg);
+}
+
+.footer {
+	box-shadow: 0 -1px 0px 0px #3a3838;
+	z-index: 2;
+	bottom: 0;
 }

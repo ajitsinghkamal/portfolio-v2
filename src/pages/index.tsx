@@ -7,7 +7,6 @@ import IconWork from "../assets/work.svg";
 import UpgradImg from "@components/image/upgrad.image";
 import CywareImg from "@components/image/cyware.image";
 import RedImg from "@components/image/red.image";
-
 const IndexPage: FunctionComponent = () => (
 	<Layout>
 		<SEO title="Home" />
