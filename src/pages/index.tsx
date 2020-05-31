@@ -16,11 +16,11 @@ const IndexPage: FunctionComponent = () => (
 				Hello Everyone!!
 			</h3>
 			<p>
-				I am Ajit Singh Kamal, a UI developer based in India. <br />I started
-				working in the field of front-end development in the year 2017. Since
-				then, I've worked as a freelancer, honed my skills in a fast-paced young
-				startup, and improved my understanding of usability and scale, working
-				with some established organizations.
+				I am Ajit Singh Kamal, a UI developer based in India. I started working
+				in the field of front-end development in the year 2017. Since then, I've
+				worked as a freelancer, honed my skills in a fast-paced young startup,
+				and improved my understanding of usability and scale, working with some
+				established organizations.
 			</p>
 		</section>
 		<section className="spacer">

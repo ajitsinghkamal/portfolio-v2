@@ -7,6 +7,7 @@ import css from "./layout.module.scss";
 const Layout: FunctionComponent = ({ children }) => {
 	return (
 		<>
+			<div className={`fixed ${css.accent}`}></div>
 			<aside className={`fixed ${css.sidebar}`}>
 				<Nav />
 			</aside>
@@ -18,9 +19,7 @@ const Layout: FunctionComponent = ({ children }) => {
 					<main>{children}</main>
 				</div>
 			</div>
-			<footer className={`fixed ${css.footer}`}>
-				<Footer />
-			</footer>
+			<Footer cls={`fixed ${css.footer}`} />
 		</>
 	);
 };
