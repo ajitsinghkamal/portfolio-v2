@@ -10,10 +10,8 @@ const Layout: FunctionComponent = ({ children }) => {
 			<div className={`fixed ${css.accent}`}></div>
 			<Nav cls={`fixed ${css.sidebar}`} />
 			<div className={css.page}>
-				<div className={css.pageContent}>
-					<Header cls={css.header} />
-					<main>{children}</main>
-				</div>
+				<Header cls={css.header} />
+				<main>{children}</main>
 			</div>
 			<Footer cls={`fixed ${css.footer}`} />
 		</>

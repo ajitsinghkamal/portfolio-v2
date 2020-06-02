@@ -2,8 +2,7 @@ $contentWidth: 650;
 $gutter: 40;
 .base {
 	margin: auto;
-	margin-left: calc(50% - #{$contentWidth / 2}px);
-	width: #{$contentWidth + 2 * $gutter}px;
+	width: #{$contentWidth}px;
 	max-width: 90%;
 	padding: 8px #{$gutter}px;
 	display: flex;

@@ -9,7 +9,8 @@ $gutter: 40;
 }
 .sidebar {
 	bottom: 0;
-	width: calc(50% - #{$contentWidth / 2}px);
+	left: calc(50% - #{$contentWidth / 2}px);
+	transform: translateX(-100%);
 	padding: 0 #{$gutter}px;
 	text-align: right;
 	z-index: 2;
@@ -21,14 +22,10 @@ $gutter: 40;
 }
 
 .page {
-	width: calc(50% + #{$contentWidth / 2}px);
-	padding: 0 #{$gutter}px;
-	margin-left: auto;
-	&Content {
-		width: #{$contentWidth}px;
-		max-width: 90%;
-		padding: 2em 0;
-	}
+	width: #{$contentWidth}px;
+	margin: 0 auto;
+	max-width: 90%;
+	padding: 2em;
 }
 
 .header,
