@@ -8,14 +8,10 @@ const Layout: FunctionComponent = ({ children }) => {
 	return (
 		<>
 			<div className={`fixed ${css.accent}`}></div>
-			<aside className={`fixed ${css.sidebar}`}>
-				<Nav />
-			</aside>
+			<Nav cls={`fixed ${css.sidebar}`} />
 			<div className={css.page}>
 				<div className={css.pageContent}>
-					<header className={css.header}>
-						<Header />
-					</header>
+					<Header cls={css.header} />
 					<main>{children}</main>
 				</div>
 			</div>

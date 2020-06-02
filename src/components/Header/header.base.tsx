@@ -1,10 +1,14 @@
 import React, { FunctionComponent } from "react";
 import css from "./header.module.scss";
 
-const Header: FunctionComponent = () => (
-	<div className="spacer">
+type Props = {
+	cls?: string;
+};
+
+const Header: FunctionComponent<Props> = ({ cls = "" }) => (
+	<header className={`spacer ${cls}`}>
 		<h1 className={css.title}>Ajit Singh Kamal</h1>
-	</div>
+	</header>
 );
 
 export default Header;
