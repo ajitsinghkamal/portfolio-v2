@@ -6,6 +6,37 @@ module.exports = {
 	},
 	siteData: {
 		githubLink: `https://github.com/AjitsinghKamal/portfolio-v2`,
+		intro: `I am Ajit Singh Kamal, a UI developer based in India. I started working
+		in the field of front-end development in the year 2017. Since then, I've
+		worked as a freelancer, honed my skills in a fast-paced young startup,
+		and improved my understanding of usability and scale, working with some
+		established organizations.`,
+		work: [
+			{
+				intro: `Currently working with India's largest higher education startup and
+				building an online classroom platform, ensuring education for the
+				quarantined world.`,
+				from: `2019`,
+				name: `UpGrad`,
+				image: `upgrad`,
+			},
+			{
+				intro: `Build, optimise and refactor. Worked on multiple products while working
+				with this young startup operating in the field of cyber threat intelligence.`,
+				from: `2018`,
+				to: `2019`,
+				name: `Cyware`,
+				image: `cyware`,
+			},
+			{
+				intro: `A startup working towards increasing the reach of real-estate marketplace to the public which was later acquired
+				by Olx.`,
+				from: `2017`,
+				to: `2018`,
+				name: `HDFC Red`,
+				image: `red`,
+			},
+		],
 	},
 	plugins: [
 		`gatsby-plugin-react-helmet`,
