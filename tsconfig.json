@@ -30,5 +30,8 @@
 				"src/layout/*"
 			]
 		}
-	}
+	},
+	"files": [
+		"custom.d.ts"
+	]
 }
