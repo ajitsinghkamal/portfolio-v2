@@ -4,6 +4,9 @@ module.exports = {
 		description: `Ajit Singh Kamal is a UI/UX engineer based in India. With more than 4 years of experience in working with frontend technologies, he excels in UI development and creating aesthetically pleasing and intutive user experiences for the web.`,
 		author: `@AjitsinghKamal`,
 	},
+	siteData: {
+		githubLink: `https://github.com/AjitsinghKamal/portfolio-v2`,
+	},
 	plugins: [
 		`gatsby-plugin-react-helmet`,
 		{
