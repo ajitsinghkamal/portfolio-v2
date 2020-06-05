@@ -3,8 +3,6 @@ module.exports = {
 		title: `Ajit's Dev Blog`,
 		description: `Ajit Singh Kamal is a UI/UX engineer based in India. With more than 4 years of experience in working with frontend technologies, he excels in UI development and creating aesthetically pleasing and intutive user experiences for the web.`,
 		author: `@AjitsinghKamal`,
-	},
-	siteData: {
 		githubLink: `https://github.com/AjitsinghKamal/portfolio-v2`,
 		intro: `I am Ajit Singh Kamal, a UI developer based in India. I started working
 		in the field of front-end development in the year 2017. Since then, I've

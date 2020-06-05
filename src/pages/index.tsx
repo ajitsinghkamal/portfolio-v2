@@ -21,7 +21,7 @@ const IndexPage: FunctionComponent = () => {
 		graphql`
 			query {
 				site {
-					siteData {
+					siteMetadata {
 						intro
 						work {
 							intro
@@ -44,14 +44,14 @@ const IndexPage: FunctionComponent = () => {
 					<IconWave className="icon" />
 					Hello Everyone!!
 				</h3>
-				<p>{site.siteData.intro}</p>
+				<p>{site.siteMetadata.intro}</p>
 			</section>
 			<section className="spacer">
 				<h3>
 					<IconWork className="icon" />
 					My Experiences
 				</h3>
-				{site.siteData.work.map((work: IWork, index: number) => {
+				{site.siteMetadata.work.map((work: IWork, index: number) => {
 					const Image = ImageMap[work.image];
 					return (
 						<Work

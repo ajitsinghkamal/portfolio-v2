@@ -11,7 +11,7 @@ const Footer: FunctionComponent<Props> = ({ cls = "" }) => {
 		graphql`
 			query {
 				site {
-					siteData {
+					siteMetadata {
 						githubLink
 					}
 				}
@@ -24,7 +24,7 @@ const Footer: FunctionComponent<Props> = ({ cls = "" }) => {
 				<button className={css.footerEl}>Attributions</button>
 				<a
 					className={`${css.footerEl} ${css.footerLink}`}
-					href={site.siteData.githubLink}
+					href={site.siteMetadata.githubLink}
 					target="_blank"
 					rel="noreferrer"
 				>
