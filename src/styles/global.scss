@@ -4,13 +4,21 @@
 @import "utilities";
 
 :root {
-	--c-bg: #1c1e23;
-	--c-text: #c1c1c1;
 	--c-accent: #ce780d;
 }
 
-body {
-	height: 100vh;
-	color: var(--c-text);
-	background: var(--c-bg);
+.theme-dark {
+	--c-bg: #1c1e23;
+	--c-text: #c1c1c1;
+	--shadow-1: #212121;
+	--shadow-2: #1d1d1d;
+	--shadow-3: #080808;
+}
+
+.theme-light {
+	--c-bg: #f9f9f9;
+	--c-text: #1c1e23;
+	--shadow-1: #e8e8e8;
+	--shadow-2: #d4d4d4;
+	--shadow-3: #cacaca;
 }

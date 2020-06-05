@@ -1,12 +1,14 @@
 import React, { FunctionComponent } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import css from "./footer.module.scss";
+import { useTheme, themeLabeler } from "@utils/themeContext";
 
 type Props = {
 	cls?: string;
 };
 
 const Footer: FunctionComponent<Props> = ({ cls = "" }) => {
+	const { theme, setTheme } = useTheme();
 	const { site } = useStaticQuery(
 		graphql`
 			query {
@@ -30,8 +32,11 @@ const Footer: FunctionComponent<Props> = ({ cls = "" }) => {
 				>
 					Repo
 				</a>
-				<button className={`${css.footerEl} ${css.btnMode}`}>
-					Switch Theme
+				<button
+					className={`${css.footerEl} ${css.btnMode}`}
+					onClick={() => setTheme(theme)}
+				>
+					{themeLabeler(theme)}
 				</button>
 			</div>
 		</footer>

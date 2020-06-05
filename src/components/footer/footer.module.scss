@@ -10,9 +10,13 @@ $gutter: 40;
 }
 .footerEl {
 	font-size: 0.875rem;
-	color: #c2c2c2;
+	color: var(--c-text);
+	transition: color 0.3s, opacity 0.3s;
 	text-decoration: none;
 	padding: 0;
+	&:hover {
+		opacity: 0.6;
+	}
 }
 .footerLink {
 	line-height: 26px;

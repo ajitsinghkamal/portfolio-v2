@@ -67,6 +67,7 @@ module.exports = {
 					"@layout": `src/layout/`,
 					"@pages": `src/pages/`,
 					"@utils": `src/utils/`,
+					"@src": `src/`,
 				},
 			},
 		},
