@@ -1,5 +1,6 @@
 .base {
 	border-radius: 10px;
-	box-shadow: 0 0 50px 10px var(--shadow-3);
+	box-shadow: 0 9px 25px 6px var(--shadow-3);
+	transition: box-shadow 0.3s;
 	overflow: hidden;
 }

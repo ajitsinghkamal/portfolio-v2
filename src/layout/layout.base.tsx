@@ -15,7 +15,7 @@ const Layout: FunctionComponent = ({ children }) => {
 				<Nav cls={`fixed ${css.sidebar}`} />
 				<div className={css.page}>
 					<Header cls={css.header} />
-					<main>{children}</main>
+					<main className={css.content}>{children}</main>
 				</div>
 				<Footer cls={`fixed ${css.footer}`} />
 			</div>
