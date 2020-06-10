@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent, useRef, useLayoutEffect } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 
 import Layout from "@layout/layout.base";
@@ -8,6 +8,10 @@ import IconWave from "../assets/wave.svg";
 import IconWork from "../assets/work.svg";
 import ImageMap from "@components/image/image.exports";
 
+import {
+	VisibilityContext,
+	setVisibilityObserver,
+} from "@utils/visbilityContext";
 interface IWork {
 	intro: string;
 	name: string;
@@ -35,18 +39,30 @@ const IndexPage: FunctionComponent = () => {
 			}
 		`
 	);
+	const content = useRef<HTMLDivElement>(null);
+	const observer = useRef<IntersectionObserver | null>(null);
+
+	//@mount
+	useLayoutEffect(() => {
+		observer.current = setVisibilityObserver(
+			{ root: content.current },
+			(el: IntersectionObserverEntry) => {
+				setActiveSection(el.target.getAttribute("data-section") || "");
+			}
+		);
+	}, []);
 
 	return (
-		<Layout>
+		<Layout ref={content}>
 			<SEO title="Home" />
-			<section className="spacer">
+			<section className="spacer" data-section="home">
 				<h3>
 					<IconWave className="icon" />
 					Hello Everyone!!
 				</h3>
 				<p>{site.siteMetadata.intro}</p>
 			</section>
-			<section className="spacer">
+			<section className="spacer" data-section="work">
 				<h3>
 					<IconWork className="icon" />
 					My Experiences
