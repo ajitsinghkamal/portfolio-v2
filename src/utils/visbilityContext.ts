@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 
 type IntersectionObserverOptions = {
 	root?: Element | null;
@@ -6,24 +6,24 @@ type IntersectionObserverOptions = {
 	threshold?: number[];
 };
 
-const DEFAULT_OPTIONS: IntersectionObserverOptions = {
-	rootMargin: `0px`,
-	threshold: [0, 1],
+type VisibilityContextType = {
+	active: string;
+	setActive: (newVisible: string) => void;
 };
 
-export const VisibilityContext = React.createContext<IntersectionObserver | null>(
-	null
-);
+const DEFAULT_OPTIONS: IntersectionObserverOptions = {
+	root: null,
+	rootMargin: `-130px 0px 130px 0px`,
+};
 
 export const setVisibilityObserver = (
-	options: IntersectionObserverOptions = {
-		...DEFAULT_OPTIONS,
-	},
+	options: IntersectionObserverOptions,
 	onVisible: (el: IntersectionObserverEntry) => void,
 	onHidden?: (el: IntersectionObserverEntry) => void
 ) => {
 	const callback = (entries: IntersectionObserverEntry[]) => {
 		entries.forEach((element: IntersectionObserverEntry) => {
+			console.log(entries);
 			if (element.isIntersecting) {
 				onVisible && onVisible(element);
 			} else {
@@ -31,6 +31,21 @@ export const setVisibilityObserver = (
 			}
 		});
 	};
-	const observer = new IntersectionObserver(callback, options);
+	const observer = new IntersectionObserver(callback, {
+		...options,
+		...DEFAULT_OPTIONS,
+	});
 	return observer;
+};
+
+export const VisibilityContext = React.createContext<
+	VisibilityContextType | undefined
+>(undefined);
+
+export const useVisibility = () => {
+	const context = useContext(VisibilityContext);
+	if (context === undefined) {
+		throw new Error("useTheme must be used within a ThemeProvider");
+	}
+	return context;
 };

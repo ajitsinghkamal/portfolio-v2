@@ -1,4 +1,10 @@
-import React, { FunctionComponent, useRef, useLayoutEffect } from "react";
+import React, {
+	FunctionComponent,
+	useRef,
+	useLayoutEffect,
+	useState,
+	useEffect,
+} from "react";
 import { useStaticQuery, graphql } from "gatsby";
 
 import Layout from "@layout/layout.base";
@@ -40,49 +46,70 @@ const IndexPage: FunctionComponent = () => {
 		`
 	);
 	const content = useRef<HTMLDivElement>(null);
-	const observer = useRef<IntersectionObserver | null>(null);
+	const observer = useRef<IntersectionObserver | null>(
+		setVisibilityObserver({}, (el: IntersectionObserverEntry) => {
+			setActiveSection(el.target.getAttribute("data-section") || "");
+		})
+	);
+	const homeSectionRef = useRef<HTMLDivElement>(null);
+	const workSectionRef = useRef<HTMLDivElement>(null);
 
+	const [activeSection, setActiveSection] = useState("");
+
+	const startObserving = (target: Element | null): void => {
+		if (target && observer.current) {
+			observer.current.observe(target);
+		}
+	};
+	const stopObserving = (target: Element | null): void => {
+		if (target && observer.current) {
+			observer.current.unobserve(target);
+		}
+	};
 	//@mount
-	useLayoutEffect(() => {
-		observer.current = setVisibilityObserver(
-			{ root: content.current },
-			(el: IntersectionObserverEntry) => {
-				setActiveSection(el.target.getAttribute("data-section") || "");
-			}
-		);
+	useEffect(() => {
+		startObserving(workSectionRef.current);
+		startObserving(homeSectionRef.current);
+
+		return () => {};
 	}, []);
 
 	return (
-		<Layout ref={content}>
-			<SEO title="Home" />
-			<section className="spacer" data-section="home">
-				<h3>
-					<IconWave className="icon" />
-					Hello Everyone!!
-				</h3>
-				<p>{site.siteMetadata.intro}</p>
-			</section>
-			<section className="spacer" data-section="work">
-				<h3>
-					<IconWork className="icon" />
-					My Experiences
-				</h3>
-				{site.siteMetadata.work.map((work: IWork, index: number) => {
-					const Image = ImageMap[work.image];
-					return (
-						<Work
-							key={`${index}_${work.name}`}
-							company={work.name}
-							from={work.from}
-							to={work.to || `Current`}
-							image={<Image />}
-						>
-							{work.intro}
-						</Work>
-					);
-				})}
-			</section>
-		</Layout>
+		<VisibilityContext.Provider
+			value={{ active: activeSection, setActive: setActiveSection }}
+		>
+			<Layout passedRef={content}>
+				<SEO title="Home" />
+
+				<section className="spacer" data-section="home" ref={homeSectionRef}>
+					<h3>
+						<IconWave className="icon" />
+						Hello Everyone!!
+					</h3>
+					<p>{site.siteMetadata.intro}</p>
+				</section>
+				<section className="spacer" data-section="work" ref={workSectionRef}>
+					<h3>
+						<IconWork className="icon" />
+						My Experiences
+					</h3>
+					{site.siteMetadata.work.map((work: IWork, index: number) => {
+						const Image = ImageMap[work.image];
+						return (
+							<Work
+								key={`${index}_${work.name}`}
+								company={work.name}
+								from={work.from}
+								to={work.to || `Current`}
+								image={<Image />}
+							>
+								{work.intro}
+							</Work>
+						);
+					})}
+				</section>
+			</Layout>
+		</VisibilityContext.Provider>
 	);
 };
 

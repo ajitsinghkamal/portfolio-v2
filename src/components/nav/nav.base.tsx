@@ -3,10 +3,12 @@ import css from "./nav.module.scss";
 
 type Props = {
 	cls?: string;
+	active: string;
 };
 
-const Nav: FunctionComponent<Props> = ({ cls = "" }) => (
+const Nav: FunctionComponent<Props> = ({ cls = "", active }) => (
 	<aside className={cls}>
+		{active}
 		<nav className={`ft-sans ${css.base}`}>
 			<ul className={css.navList}>
 				<li className={css.navListItem}>
