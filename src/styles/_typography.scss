@@ -4,12 +4,12 @@
 }
 
 @font-face {
-	font-family: "crimson";
-	src: url("../fonts/Crimson.ttf");
+	font-family: "muli";
+	src: url("../fonts/Muli.ttf");
 }
 
 $ft-stack: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
 	Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 
 $ft-sans-serif: jost, $ft-stack;
-$ft-serif: crimson, $ft-stack;
+$ft-serif: muli, $ft-stack;

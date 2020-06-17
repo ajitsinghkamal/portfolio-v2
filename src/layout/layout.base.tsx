@@ -18,19 +18,17 @@ type Props = { passedRef?: React.Ref<HTMLDivElement> };
 
 const Layout: FunctionComponent<Props> = ({ children, passedRef }) => {
 	const [theme, setTheme] = useState(DEFAULT_THEME);
-	const { active } = useVisibility();
 	return (
 		<ThemeContext.Provider value={{ theme, setTheme: themeToggle(setTheme) }}>
 			<div className={`${css.base} ${theme}`}>
 				<div className={`fixed ${css.accent}`}></div>
-				<Nav cls={`fixed ${css.sidebar}`} active={active} />
+				<Header cls={`fixed ${css.header}`} />
 				<div className={css.page}>
-					<Header cls={css.header} />
 					<main className={css.content} ref={passedRef}>
 						{children}
 					</main>
 				</div>
-				<Footer cls={`fixed ${css.footer}`} />
+				<Footer cls={css.footer} />
 			</div>
 		</ThemeContext.Provider>
 	);

@@ -1,4 +1,4 @@
-$contentWidth: 650;
+$contentWidth: 725;
 $gutter: 40;
 
 .base {
@@ -24,15 +24,11 @@ $gutter: 40;
 	z-index: 2;
 }
 
-.page,
-.sidebar {
-	padding-top: 2rem;
-}
-
 .page {
 	width: #{$contentWidth}px;
 	margin: 0 auto;
 	max-width: 90%;
+	padding-top: 5em;
 }
 
 .content {

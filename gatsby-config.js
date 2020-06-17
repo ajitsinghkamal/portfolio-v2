@@ -4,8 +4,8 @@ module.exports = {
 		description: `Ajit Singh Kamal is a UI/UX engineer based in India. With more than 4 years of experience in working with frontend technologies, he excels in UI development and creating aesthetically pleasing and intutive user experiences for the web.`,
 		author: `@AjitsinghKamal`,
 		githubLink: `https://github.com/AjitsinghKamal/portfolio-v2`,
-		intro: `I am Ajit Singh Kamal, a UI/UX developer based in India. 
-		I have been creating rich user experiences for the web since 2017. As a developer, I strive for aesthetics, semantics, scalability, and the cause of a product. Currently, I majorly dabble with JavaScript and Python.`,
+		intro: `A UI / UX developer based in India. 
+		I strive for creating rich and accessible user experiences for the web focusing on the aesthetics, semantics, and scalability of the product. Currently dabbling with JavaScript and Python.`,
 		work: [
 			{
 				intro: `Currently working with India's largest higher education startup and
@@ -71,6 +71,8 @@ module.exports = {
 					"@layout": `src/layout/`,
 					"@pages": `src/pages/`,
 					"@utils": `src/utils/`,
+					"@pageComponents": `src/pageComponents/`,
+					"@assets": `src/assets/`,
 					"@src": `src/`,
 				},
 			},

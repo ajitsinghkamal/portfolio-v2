@@ -1,0 +1,17 @@
+.base {
+	padding: 8em 0;
+}
+
+.title {
+	font-size: 4.4rem;
+	color: var(--c-prim);
+	margin-bottom: 0;
+	line-height: 2;
+}
+
+.contact {
+	margin: 3em 0;
+	&Item {
+		margin-right: 1.5em;
+	}
+}
