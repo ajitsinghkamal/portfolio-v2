@@ -7,15 +7,16 @@ type Props = {
 	from: string;
 	to: string;
 	image: any;
+	shade?: string;
 };
 const Work: FunctionComponent<Props> = ({
 	company,
 	from,
 	to,
-	children,
+	shade = "",
 	image,
 }) => (
-	<div className={`${css.base}`}>
+	<div className={css.base}>
 		<div className="ft-sans">
 			<p className={css.title}>{company}</p>
 		</div>
@@ -25,7 +26,9 @@ const Work: FunctionComponent<Props> = ({
 				<small> - </small>
 				{to}
 			</div>
-			<div className={css.imageWrapper}>{image}</div>
+			<div className={`${css.imageWrapper} ${css[shade as keyof typeof css]}`}>
+				{image}
+			</div>
 		</div>
 	</div>
 );

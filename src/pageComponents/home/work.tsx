@@ -27,6 +27,7 @@ const WorkSection: FunctionComponent<Props> = ({ details }) => (
 					from={work.from}
 					to={work.to || `Current`}
 					image={<Image />}
+					shade={`backdrop${index + 1}`}
 				>
 					{work.intro}
 				</Work>

@@ -31,4 +31,16 @@
 	flex: 1 0 80%;
 	box-shadow: -65px -62px 0px 0 var(--c-prim2);
 	border-radius: 10px;
+	&.backdrop1 {
+		box-shadow: -65px -58px 0px 0 var(--c-prim2);
+	}
+	&.backdrop2 {
+		box-shadow: -65px -58px 0px 0 var(--c-prim3);
+	}
+	&.backdrop3 {
+		box-shadow: -65px -58px 0px 0 var(--c-prim4);
+	}
+	&.backdrop4 {
+		box-shadow: -65px -58px 0px 0 var(--c-prim5);
+	}
 }

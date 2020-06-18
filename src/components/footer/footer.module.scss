@@ -1,9 +1,8 @@
 $contentWidth: 650;
 $gutter: 40;
 .base {
-	margin: auto;
-	width: #{$contentWidth}px;
-	max-width: 90%;
+	max-width: 1250px;
+	margin: 0 auto;
 	padding: 8px #{$gutter}px;
 	display: flex;
 	align-items: center;
