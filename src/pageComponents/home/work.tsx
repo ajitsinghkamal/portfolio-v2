@@ -18,7 +18,6 @@ type Props = {
 
 const WorkSection: FunctionComponent<Props> = ({ details }) => (
 	<section className="spacer">
-		<h3 className={css.title}>WORK</h3>
 		{details.map((work: detail, index: number) => {
 			const Image = ImageMap[work.image];
 			return (

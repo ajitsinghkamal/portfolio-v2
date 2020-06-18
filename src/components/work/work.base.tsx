@@ -15,17 +15,18 @@ const Work: FunctionComponent<Props> = ({
 	children,
 	image,
 }) => (
-	<div className={`spacer ${css.base}`}>
+	<div className={`${css.base}`}>
 		<div className="ft-sans">
-			<p className={css.year}>
+			<p className={css.title}>{company}</p>
+		</div>
+		<div className={css.details}>
+			<div className={css.year}>
 				{from}
 				<small> - </small>
 				{to}
-			</p>
-			<p className={css.title}>{company}</p>
+			</div>
+			<div className={css.imageWrapper}>{image}</div>
 		</div>
-		<p>{children}</p>
-		<div>{image}</div>
 	</div>
 );
 

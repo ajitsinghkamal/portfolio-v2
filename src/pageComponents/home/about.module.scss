@@ -1,4 +1,9 @@
 .base {
+	height: 100vh;
+	max-height: 900px;
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
 	padding: 8em 0;
 }
 
@@ -12,6 +17,6 @@
 .contact {
 	margin: 3em 0;
 	&Item {
-		margin-right: 1.5em;
+		margin-right: 2em;
 	}
 }
