@@ -12,6 +12,8 @@ const IndexPage: FunctionComponent = () => {
 				site {
 					siteMetadata {
 						intro
+						emailLink
+						linkedinLink
 						work {
 							intro
 							image
@@ -28,7 +30,10 @@ const IndexPage: FunctionComponent = () => {
 	return (
 		<Layout>
 			<SEO title="Home" />
-			<AboutSection details={site.siteMetadata.intro} />
+			<AboutSection
+				details={site.siteMetadata.intro}
+				links={[site.siteMetadata.emailLink, site.siteMetadata.linkedinLink]}
+			/>
 			<WorkSection details={site.siteMetadata.work} />
 		</Layout>
 	);

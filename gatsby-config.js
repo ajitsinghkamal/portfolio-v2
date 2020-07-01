@@ -10,7 +10,7 @@ module.exports = {
 		stackoverLink: `https://stackoverflow.com/users/6517778/`,
 		githubLink: `github.com/AjitsinghKamal/`,
 		intro: `A UI / UX developer based in India. 
-		I strive for creating rich and accessible user experiences for the web focusing on the aesthetics, semantics, and scalability of the product. Currently dabbling with JavaScript and Python.`,
+		I strive for creating rich and accessible user experiences for the web focusing on the aesthetics, semantics, and scalability of the product.`,
 		work: [
 			{
 				intro: `Currently working with India's largest higher education startup and
