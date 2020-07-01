@@ -9,20 +9,16 @@ $gutter: 40;
 }
 .footerEl {
 	font-size: 0.875rem;
-	color: var(--c-text);
 	transition: color 0.3s, opacity 0.3s;
-	text-decoration: none;
-	padding: 0;
-	&:hover {
-		opacity: 0.6;
-	}
-}
-.footerLink {
 	line-height: 26px;
 	display: block;
-	height: 26px;
 	margin: 0 20px;
+	opacity: 0.6;
+	&:hover {
+		opacity: 0.8;
+	}
 }
+
 .btnMode {
 	margin-left: auto;
 }
