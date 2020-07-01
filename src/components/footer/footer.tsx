@@ -35,18 +35,18 @@ const Footer: FunctionComponent<Props> = ({ cls = "" }) => {
 					Contact Me
 				</Button>
 				<Button
+					type="ghost"
+					cls={`${css.footerEl} ${css.btnMode}`}
+					onClick={() => setTheme(theme)}
+				>
+					{themeLabeler(theme)}
+				</Button>
+				<Button
 					cls={`${css.footerEl}`}
 					link={site.siteMetadata.repoLink}
 					type="ghost"
 				>
 					README.md
-				</Button>
-				<Button
-					type="ghost"
-					cls={`${css.footerEl} ${css.btnMode}`}
-					onClick={setThemeHandler}
-				>
-					{themeLabeler(theme)}
 				</Button>
 			</div>
 		</footer>

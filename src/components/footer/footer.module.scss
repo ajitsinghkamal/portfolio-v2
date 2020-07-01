@@ -8,12 +8,13 @@ $gutter: 40;
 	align-items: center;
 }
 .footerEl {
-	font-size: 0.875rem;
+	font-size: 0.85rem;
 	transition: color 0.3s, opacity 0.3s;
 	line-height: 26px;
 	display: block;
 	margin: 0 20px;
 	opacity: 0.6;
+	font-variation-settings: "wght" 450;
 	&:hover {
 		opacity: 0.8;
 	}
