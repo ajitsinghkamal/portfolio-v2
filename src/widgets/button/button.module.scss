@@ -6,4 +6,12 @@
 	padding: 0.35em 2em;
 	color: #fff;
 	font-variation-settings: "wght" 550;
+
+	&.ghost {
+		background: none;
+	}
+
+	&.link {
+		text-decoration: none;
+	}
 }

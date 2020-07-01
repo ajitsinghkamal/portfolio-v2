@@ -3,7 +3,12 @@ module.exports = {
 		title: `Ajit's Dev Blog`,
 		description: `Ajit Singh Kamal is a UI/UX engineer based in India. With more than 4 years of experience in working with frontend technologies, he excels in UI development and creating aesthetically pleasing and intutive user experiences for the web.`,
 		author: `@AjitsinghKamal`,
-		githubLink: `https://github.com/AjitsinghKamal/portfolio-v2`,
+		repoLink: `https://github.com/AjitsinghKamal/portfolio-v2`,
+		emailLink: `mailto:ajitskamal@gmail.com`,
+		linkedinLink: `https://linkedin.com/in/ajitsinghkamal/`,
+		codepenLink: `https://codepen.io/AjitsinghKamal/`,
+		stackoverLink: `https://stackoverflow.com/users/6517778/`,
+		githubLink: `github.com/AjitsinghKamal/`,
 		intro: `A UI / UX developer based in India. 
 		I strive for creating rich and accessible user experiences for the web focusing on the aesthetics, semantics, and scalability of the product. Currently dabbling with JavaScript and Python.`,
 		work: [
@@ -71,7 +76,7 @@ module.exports = {
 					"@layout": `src/layout/`,
 					"@pages": `src/pages/`,
 					"@utils": `src/utils/`,
-					"@pageComponents": `src/pageComponents/`,
+					"@widgets": `src/widgets/`,
 					"@assets": `src/assets/`,
 					"@src": `src/`,
 				},

@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from "react";
 import IconWave from "@assets/wave.svg";
-import Button from "@components/button/button.base";
+import Button from "@widgets/button";
 import css from "./about.module.scss";
 
 type Props = {

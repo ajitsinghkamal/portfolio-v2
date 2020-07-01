@@ -1,14 +1,9 @@
-@import "reset";
-@import "typography";
-@import "default";
-@import "utilities";
-
 :root {
 	--c-accent: #ce780d;
 }
 
 .theme-dark {
-	--c-bg: #1e212b;
+	--c-bg: #141517;
 	--c-text: #c1c1c1;
 	--shadow-1: #212121;
 	--shadow-2: #1d1d1d;

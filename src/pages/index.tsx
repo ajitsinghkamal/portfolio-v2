@@ -1,10 +1,9 @@
 import React, { FunctionComponent } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 
-import Layout from "@layout/layout.base";
+import Layout from "@layout/layout";
 import SEO from "@components/seo";
-import AboutSection from "@pageComponents/home/about";
-import WorkSection from "@pageComponents/home/work";
+import { AboutSection, WorkSection } from "@components/home";
 
 const IndexPage: FunctionComponent = () => {
 	const { site } = useStaticQuery(

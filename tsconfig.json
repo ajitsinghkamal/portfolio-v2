@@ -32,8 +32,8 @@
 			"@utils/*": [
 				"src/utils/*"
 			],
-			"@pageComponents/*": [
-				"src/pageComponents/*"
+			"@widgets/*": [
+				"src/widgets/*"
 			],
 			"@assets/*": [
 				"src/assets/*"

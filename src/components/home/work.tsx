@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from "react";
-import ImageMap from "@components/image/image.exports";
-import Work from "@components/work/work.base";
+import ImageMap from "@components/image";
+import Work from "@components/work";
 
 import css from "./work.module.scss";
 

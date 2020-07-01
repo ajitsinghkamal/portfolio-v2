@@ -1,18 +1,9 @@
-import React, {
-	FunctionComponent,
-	useState,
-	useLayoutEffect,
-	forwardRef,
-	ReactNode,
-	useRef,
-} from "react";
-import Header from "@components/header/header.base";
-import Nav from "@components/nav/nav.base";
-import Footer from "@components/footer/footer.base";
+import React, { FunctionComponent, useState } from "react";
+import Header from "@components/header";
+import Footer from "@components/footer";
 import css from "./layout.module.scss";
 import { ThemeContext, themeToggle } from "@utils/themeContext";
 import { DEFAULT_THEME } from "@src/constants";
-import { useVisibility, setVisibilityObserver } from "@utils/visbilityContext";
 
 type Props = { passedRef?: React.Ref<HTMLDivElement> };
 
