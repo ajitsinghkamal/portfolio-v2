@@ -1,6 +1,9 @@
+/** @jsx jsx */
+
 import React, { FunctionComponent, useCallback } from "react";
 import { useStaticQuery, graphql } from "gatsby";
-import css from "./footer.module.scss";
+import { jsx, css } from "@emotion/core";
+
 import { useTheme, themeLabeler } from "@utils/themeContext";
 import Button from "@widgets/button";
 
@@ -8,6 +11,13 @@ type Props = {
 	cls?: string;
 };
 
+const CssBase = (props) => css({
+	maxWidth: props.maxWidth,
+	margin: '0 auto',
+	padding: 8px #{$gutter}px,
+	display: 'flex',
+	alignItems: 'center'
+})
 const Footer: FunctionComponent<Props> = ({ cls = "" }) => {
 	const { theme, setTheme } = useTheme();
 	const setThemeHandler = useCallback(() => setTheme(theme), []);

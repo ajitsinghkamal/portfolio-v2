@@ -1,7 +1,10 @@
+/** @jsx jsx */
+
 import React, { FunctionComponent } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 
-import css from "./header.module.scss";
+import { jsx, css } from "@emotion/core";
+
 import Button from "@widgets/button";
 
 import SOIcon from "@assets/stackoverflow.svg";
@@ -11,6 +14,19 @@ import CodepenIcon from "@assets/codepen.svg";
 type Props = {
 	cls?: string;
 };
+
+const HeaderCss = css({
+	display: "flex",
+	alignItems: "baseline",
+	zIndex: 3,
+	paddingLeft: "2em",
+	paddingRight: "2em",
+	paddingBottom: "1.2em",
+	justifyContent: "flexEnd",
+	maxWidth: "1250px",
+	margin: "0 auto",
+	boxShadow: "0 1px 0 var(--c-shadow)",
+});
 
 const Header: FunctionComponent<Props> = ({ cls = "" }) => {
 	const { site } = useStaticQuery(
@@ -27,7 +43,7 @@ const Header: FunctionComponent<Props> = ({ cls = "" }) => {
 		`
 	);
 	return (
-		<header className={`spacer ${cls} ${css.base}`}>
+		<Header css={HeaderCss}>
 			<nav>
 				<ul className={css.socialNav}>
 					<Button
@@ -53,7 +69,7 @@ const Header: FunctionComponent<Props> = ({ cls = "" }) => {
 					</Button>
 				</ul>
 			</nav>
-		</header>
+		</Header>
 	);
 };
 

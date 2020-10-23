@@ -10,7 +10,7 @@ module.exports = {
 		stackoverLink: `https://stackoverflow.com/users/6517778/`,
 		githubLink: `github.com/AjitsinghKamal/`,
 		intro: `A UI / UX developer based in India. 
-		I strive for creating rich and accessible user experiences for the web focusing on the aesthetics, semantics, and scalability of the product.`,
+		I create rich and accessible user experiences for the web with a keep focus on the aesthetics, semantics, and scalability of the product.`,
 		work: [
 			{
 				intro: `Currently working with India's largest higher education startup and
@@ -56,6 +56,7 @@ module.exports = {
 		},
 		`gatsby-transformer-sharp`,
 		`gatsby-plugin-sharp`,
+		`gatsby-plugin-emotion`,
 		{
 			resolve: `gatsby-plugin-manifest`,
 			options: {
@@ -79,10 +80,12 @@ module.exports = {
 					"@widgets": `src/widgets/`,
 					"@assets": `src/assets/`,
 					"@src": `src/`,
+					"@styles": `src/styles`,
 				},
 			},
 		},
 		`gatsby-plugin-scss-typescript`,
+		`gatsby-plugin-theme-ui`,
 		{
 			resolve: "gatsby-plugin-react-svg",
 			options: {

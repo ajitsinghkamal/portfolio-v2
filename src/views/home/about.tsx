@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from "react";
 import IconWave from "@assets/wave.svg";
 import Button from "@widgets/button";
-import css from "./about.module.scss";
+import css from "../../components/home/about.module.scss";
 
 type Props = {
 	details: string;

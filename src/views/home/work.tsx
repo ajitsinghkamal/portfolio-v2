@@ -2,7 +2,7 @@ import React, { FunctionComponent } from "react";
 import ImageMap from "@components/image";
 import Work from "@components/work";
 
-import css from "./work.module.scss";
+import css from "../../components/home/work.module.scss";
 
 type detail = {
 	intro: string;

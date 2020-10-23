@@ -38,6 +38,9 @@
 			"@assets/*": [
 				"src/assets/*"
 			],
+			"@styles/*": [
+				"src/styles/*"
+			],
 			"@src/*": [
 				"src/*"
 			]
