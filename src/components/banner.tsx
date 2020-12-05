@@ -1,7 +1,8 @@
 /** @jsx jsx */
 
 import React, { PropsWithChildren } from "react";
-import { jsx } from "theme-ui";
+import { jsx, Flex } from "theme-ui";
+import { css } from "@emotion/react";
 
 import { Button } from "@components";
 import IconWave from "@assets/svgs/wave.svg";
@@ -27,19 +28,34 @@ function Banner({
 	return (
 		<section sx={CssBase}>
 			<h3>
-				<IconWave />
+				<span sx={{ mr: "1em" }}>
+					<IconWave />
+				</span>
 				{greeting}
 			</h3>
 			<h1 sx={CssTitle}>{title}</h1>
 			<p>{children}</p>
 			{links && links.length && (
-				<div sx={CssContact}>
+				<Flex
+					sx={{
+						mb: "1em",
+					}}
+				>
 					{links.map((link) => (
-						<Button sx={CssLink} link={link.url} key={link.id}>
+						<Button
+							link={link.url}
+							key={link.id}
+							styl={css({
+								padding: 0,
+								marginRight: "1.5em",
+								fontSize: "1rem",
+								opacity: 0.6,
+							})}
+						>
 							{link.label}
 						</Button>
 					))}
-				</div>
+				</Flex>
 			)}
 		</section>
 	);
@@ -55,19 +71,11 @@ const CssBase = {
 };
 
 const CssTitle = {
-	fontSize: 4,
+	fontSize: 6,
 	color: "primary",
 	mb: 0,
 	lineHeight: "1.4",
 	p: "0.5em 0",
-};
-
-const CssContact = {
-	m: "1em -0.2em",
-};
-
-const CssLink = {
-	mr: "2em",
 };
 
 export default Banner;

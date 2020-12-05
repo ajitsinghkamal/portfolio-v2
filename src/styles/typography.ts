@@ -4,7 +4,7 @@ function convertToRem(valueInPixel: number): string {
 	return `${valueInPixel / BASE_FONT_SIZE}rem`;
 }
 
-export const FONT_SCALE = [12, 14, 16, 20, 24, 32, 48, 64].map(convertToRem);
+export const FONT_SCALE = [18, 14, 16, 22, 26, 32, 48, 64].map(convertToRem);
 
 export const FONT_FAMILY = Object.freeze({
 	body:

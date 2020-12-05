@@ -1,67 +1,55 @@
 /** @jsx jsx */
 
 import React, { PropsWithChildren } from "react";
-import { ThemeUICSSObject, jsx } from "theme-ui";
-
+import { jsx } from "theme-ui";
+import { SerializedStyles } from "@emotion/react";
 
 type Props = {
-	cls?: string;
 	type?: string;
 	link?: string;
+	styl?: SerializedStyles;
 	onClick?: () => void;
 };
 
 function Button({
-	children,
-	cls = "",
 	type = "",
 	link = "",
 	onClick,
-	...rest
+	children,
+	styl,
 }: PropsWithChildren<Props>) {
 	return link ? (
 		<a
-			{...rest}
+			css={styl}
 			href={link}
-			sx={CssBase(type)}
+			sx={CssBase}
 			rel="noreferrer noopener"
 			target="_blank"
-			className={`${cls} ${
-				type || ""
-			}`}
 		>
 			{children}
 		</a>
 	) : (
-		<button
-			{...rest}
-			onClick={onClick}
-			sx={CssBase(type)}
-			className={`${cls} ${
-				type || ""
-			}`}
-		>
+		<button css={styl} onClick={onClick} sx={CssBase}>
 			{children}
 		</button>
 	);
 }
 
 //#region Styles
-const CssBase = (type: string):ThemeUICSSObject => ({
-	borderRadius: '100px',
-	fontSize: 1,
-	color: 'text',
-	fontVariationSettings: `"wght" 650`,
-	p: '0.75em 2.5em',
-	textDecoration: 'none',
-	background: type === 'ghost' ? 'none' : "primary",
-	'&:hover': {
-		opacity: '0.5',
-		transition: 'opacity 0.3s',
-	}
-})
+const CssBase = {
+	borderRadius: "10px",
+	fontSize: 2,
+	color: "text",
+	p: "0.5em 1.5em",
+	textDecoration: "none",
+	bg: "none",
+	transition: "background 0.3s, color 0.3s, opacity 0.3s",
+	"&:hover": {
+		color: "primary",
+		opacity: 1,
+	},
+};
 
 //#endregion Styles
 
-	
 export default Button;

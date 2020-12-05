@@ -69,7 +69,6 @@ const CssRoot = {
 	justifyContent: "flex-end",
 	width: "100%",
 	right: "0",
-	background: "background",
 	transition: "color 0.3s, background 0.3s, box-shadow 0.3s",
 	zIndex: 2,
 	bottom: 0,

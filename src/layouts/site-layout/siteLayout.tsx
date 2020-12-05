@@ -17,7 +17,7 @@ function SiteLayout({ children, passedRef }: PropsWithChildren<Props>) {
 					{children}
 				</main>
 			</div>
-			<Footer />
+			{/* <Footer /> */}
 		</div>
 	);
 }
@@ -25,7 +25,7 @@ function SiteLayout({ children, passedRef }: PropsWithChildren<Props>) {
 //#region Styles
 const CssBase = {
 	minHeight: "100vh",
-	background: "background",
+	bg: "background",
 	color: "text",
 	transition: "color 0.3s, background 0.3s",
 };
@@ -34,7 +34,7 @@ const CssAccent = {
 	right: 0,
 	height: "7px",
 	zIndex: 5,
-	background: "accent",
+	bg: "accent",
 };
 
 const CssPage = {

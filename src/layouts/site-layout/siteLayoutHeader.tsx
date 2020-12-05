@@ -1,8 +1,9 @@
 /** @jsx jsx */
-
 import React from "react";
+
 import { useStaticQuery, graphql } from "gatsby";
-import { jsx } from "theme-ui";
+import { jsx, Flex, Box, ThemeUICSSObject } from "theme-ui";
+import { css } from "@emotion/react";
 
 import { Button } from "@components";
 
@@ -27,69 +28,54 @@ function Header(props: Props) {
 		`
 	);
 	return (
-		<header sx={CssRoot}>
-			<nav>
-				<ul sx={CssSocialNav}>
-					<Button
-						link={site.siteMetadata.codepenLink}
-						sx={CssNavLink}
-						type="ghost"
-					>
-						<CodepenIcon sx={CssNavIcon} />
-					</Button>
-					<Button
-						link={site.siteMetadata.stackoverLink}
-						sx={CssNavLink}
-						type="ghost"
-					>
-						<SOIcon sx={CssNavIcon} />
-					</Button>
-					<Button
-						link={site.siteMetadata.githubLink}
-						sx={CssNavLink}
-						type="ghost"
-					>
-						<GitIcon sx={CssNavIcon} />
-					</Button>
-				</ul>
-			</nav>
-		</header>
+		<Box sx={CssRoot} as="header">
+			<Flex sx={CssContainer}>
+				<nav>
+					<Flex as="ul">
+						<Button link={site.siteMetadata.codepenLink} styl={css(CssNav)}>
+							<CodepenIcon />
+						</Button>
+						<Button link={site.siteMetadata.stackoverLink} styl={css(CssNav)}>
+							<SOIcon />
+						</Button>
+						<Button link={site.siteMetadata.githubLink} styl={css(CssNav)}>
+							<GitIcon />
+						</Button>
+					</Flex>
+				</nav>
+			</Flex>
+		</Box>
 	);
 }
 
 //#region Styles
-const CssRoot = {
-	display: "flex",
-	alignItems: "baseline",
-	justifyContent: "flexEnd",
+const CssRoot: ThemeUICSSObject = {
 	zIndex: 3,
-	px: "2em",
-	pb: "1.2em",
-	m: "0 auto",
-	maxWidth: "container",
-	boxShadow: "0 1px 0 var(--c-shadow)",
+	py: "1.2em",
 	width: "100%",
+	position: "fixed",
 	right: "0",
 	top: "0",
-	background: "background",
-	transition: "color 0.3s, background 0.3s",
+	left: "0",
 };
 
-const CssSocialNav = {
-	m: 0,
+const CssContainer = {
+	m: "0 auto",
+	maxWidth: "container",
+	justifyContent: "flex-end",
+};
+
+const CssNav = {
+	margin: "0 1.5em",
+	padding: "0",
+	fontSize: "1rem",
 	display: "flex",
+	alignItems: "center",
+	justifyContent: "center",
+	width: "32px",
+	height: "32px",
 };
 
-const CssNavLink = {
-	m: "0 1.5em",
-};
-
-const CssNavIcon = {
-	color: "text",
-	height: "1.6em",
-	width: "2em",
-	transition: "color 0.3s",
-};
 //#endregion Styles
 
 export default Header;
