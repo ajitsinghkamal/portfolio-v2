@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import React from "react";
 import { Helmet } from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
 
@@ -8,12 +8,7 @@ type Props = {
 	meta?: [];
 	title: string;
 };
-const SEO: FunctionComponent<Props> = ({
-	description = ``,
-	lang = `en`,
-	meta = [],
-	title,
-}) => {
+function SEO({ description = ``, lang = `en`, meta = [], title }: Props) {
 	const { site } = useStaticQuery(
 		graphql`
 			query {
@@ -73,6 +68,6 @@ const SEO: FunctionComponent<Props> = ({
 			].concat(meta)}
 		/>
 	);
-};
+}
 
 export default SEO;

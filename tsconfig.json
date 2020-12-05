@@ -23,17 +23,20 @@
 			"@pages/*": [
 				"src/pages/*"
 			],
-			"@components/*": [
-				"src/components/*"
+			"@component/*": [
+				"src/components/*",
 			],
-			"@layout/*": [
-				"src/layout/*"
+			"@components": [
+				"src/components/index",
+			],
+			"@layouts/*": [
+				"src/layouts/*"
 			],
 			"@utils/*": [
 				"src/utils/*"
 			],
-			"@widgets/*": [
-				"src/widgets/*"
+			"@templates/*": [
+				"src/templates/*"
 			],
 			"@assets/*": [
 				"src/assets/*"

@@ -1,7 +1,6 @@
-import { css } from "@emotion/core";
+import { css } from "@emotion/react";
 
 export const CssFixed = css`
-	top: 0;
 	left: 0;
 	position: fixed;
 `;
@@ -14,4 +13,9 @@ export const CssIcon = css({
 	height: "18px",
 	width: "18px",
 	marginRight: "12px",
+});
+
+export const CssWorkSectionImage = css({
+	overflow: "hidden",
+	borderRadius: "10px",
 });

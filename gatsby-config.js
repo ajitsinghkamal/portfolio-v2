@@ -9,8 +9,6 @@ module.exports = {
 		codepenLink: `https://codepen.io/AjitsinghKamal/`,
 		stackoverLink: `https://stackoverflow.com/users/6517778/`,
 		githubLink: `github.com/AjitsinghKamal/`,
-		intro: `A UI / UX developer based in India. 
-		I create rich and accessible user experiences for the web with a keep focus on the aesthetics, semantics, and scalability of the product.`,
 		work: [
 			{
 				intro: `Currently working with India's largest higher education startup and
@@ -50,8 +48,23 @@ module.exports = {
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
+				name: `pages`,
+				path: `${__dirname}/src/pages/`,
+			},
+		},
+		{
+			resolve: `gatsby-source-filesystem`,
+			options: {
 				name: `images`,
-				path: `${__dirname}/src/images`,
+				path: `${__dirname}/src/assets/images`,
+			},
+		},
+		{
+			resolve: `gatsby-plugin-mdx`,
+			options: {
+				defaultLayouts: {
+					default: require.resolve(`./src/layouts/site-layout/index.tsx`),
+				},
 			},
 		},
 		`gatsby-transformer-sharp`,
@@ -66,26 +79,30 @@ module.exports = {
 				background_color: `#663399`,
 				theme_color: `#663399`,
 				display: `minimal-ui`,
-				icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+				icon: `src/assets/images/gatsby-icon.png`, // This path is relative to the root of the site.
 			},
 		},
 		{
 			resolve: `gatsby-alias-imports`,
 			options: {
 				aliases: {
-					"@components": `src/components/`,
-					"@layout": `src/layout/`,
+					"@components": `src/components`,
+					"@layouts": `src/layouts/`,
 					"@pages": `src/pages/`,
 					"@utils": `src/utils/`,
-					"@widgets": `src/widgets/`,
+					"@templates": `src/templates/`,
 					"@assets": `src/assets/`,
 					"@src": `src/`,
 					"@styles": `src/styles`,
 				},
 			},
 		},
-		`gatsby-plugin-scss-typescript`,
-		`gatsby-plugin-theme-ui`,
+		{
+			resolve: `gatsby-plugin-sass`,
+			options: {
+				implementation: require("sass"),
+			},
+		},
 		{
 			resolve: "gatsby-plugin-react-svg",
 			options: {

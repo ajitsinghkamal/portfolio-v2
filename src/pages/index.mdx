@@ -1,0 +1,36 @@
+---
+title: Hello World | Ajit Singh Kamal
+author: Ajit Singh Kamal
+---
+
+import { graphql } from "gatsby";
+import { Seo, Banner } from "../components";
+
+<Seo title={props.pageContext.frontmatter.title}></Seo>
+<Banner
+	greeting="Hello Everyone!!"
+	title={props.pageContext.frontmatter.author}
+	links={[
+		{ url: props.data.site.siteMetadata.emailLink, label: "Email", id: "mail" },
+		{
+			url: props.data.site.siteMetadata.linkedinLink,
+			label: "LinkedIn",
+			id: "linkedin",
+		},
+	]}
+>
+	A UI / UX developer based in India. I create rich and accessible user
+	experiences for the web with a keep focus on the aesthetics, semantics, and
+	scalability of the product.
+</Banner>
+
+export const pageQuery = graphql`
+	query {
+		site {
+			siteMetadata {
+				emailLink
+				linkedinLink
+			}
+		}
+	}
+`;

@@ -1,9 +1,10 @@
-import React, { FunctionComponent } from "react";
+import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
-import css from "./image.module.scss";
+import {CssWorkSectionImage} from "@styles/utilities";
 
-const CywareImage: FunctionComponent = () => {
+
+function CywareImage() {
 	const img = useStaticQuery(graphql`
 		query {
 			placeholderImage: file(relativePath: { eq: "cyware.png" }) {
@@ -18,7 +19,7 @@ const CywareImage: FunctionComponent = () => {
 	return (
 		<Img
 			fluid={img.placeholderImage.childImageSharp.fluid}
-			className={css.base}
+			className={CssWorkSectionImage}
 		/>
 	);
 };

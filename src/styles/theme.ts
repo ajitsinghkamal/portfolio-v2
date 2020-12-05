@@ -2,14 +2,14 @@ import { PALETTE } from "@styles/colors";
 import { FONT_SCALE, FONT_FAMILY } from "@styles/typography";
 
 const DARK_THEME = Object.freeze({
+	text: PALETTE.hsl(PALETTE.white),
+	background: PALETTE.hsl(PALETTE.black),
 	primary: PALETTE.hsl(PALETTE.blue),
+	secondary: PALETTE.hsl(PALETTE.violet),
+	accent: PALETTE.hsl(PALETTE.orange),
 	highlight: PALETTE.hsl(PALETTE.blue, 0.5),
 	highlight20: PALETTE.hsl(PALETTE.blue, 0.2),
 	highlight10: PALETTE.hsl(PALETTE.blue, 0.1),
-	secondary: PALETTE.hsl(PALETTE.violet),
-	accent: PALETTE.hsl(PALETTE.orange),
-	text: PALETTE.hsl(PALETTE.white),
-	background: PALETTE.hsl(PALETTE.black),
 });
 
 const LIGHT_THEME = Object.freeze({
@@ -24,8 +24,8 @@ const LIGHT_THEME = Object.freeze({
 });
 
 const CONSTRAINTS = Object.freeze({
-	maxWidth: 1250,
-	gutter: 40,
+	container: 1250,
+	content: 750
 });
 
 /**
@@ -34,8 +34,10 @@ const CONSTRAINTS = Object.freeze({
  */
 export default Object.freeze({
 	colors: Object.freeze({
-		dark: DARK_THEME,
-		light: LIGHT_THEME,
+		...DARK_THEME,
+		modes: {
+			light: LIGHT_THEME,
+		} 
 	}),
 	fonts: FONT_FAMILY,
 	fontSizes: FONT_SCALE,
@@ -44,4 +46,7 @@ export default Object.freeze({
 		heading: 1.125,
 	}),
 	sizes: CONSTRAINTS,
+	space: {
+		gutter: 40,
+	}
 });

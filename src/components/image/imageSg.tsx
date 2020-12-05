@@ -1,12 +1,13 @@
-import React, { FunctionComponent } from "react";
+import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
-import css from "./image.module.scss";
+import {CssWorkSectionImage} from "@styles/utilities";
 
-const UpgradImage: FunctionComponent = () => {
+
+function SgImage(){
 	const img = useStaticQuery(graphql`
 		query {
-			placeholderImage: file(relativePath: { eq: "upgrad.png" }) {
+			placeholderImage: file(relativePath: { eq: "sudeepgandhi.png" }) {
 				childImageSharp {
 					fluid(maxWidth: 800) {
 						...GatsbyImageSharpFluid
@@ -18,9 +19,9 @@ const UpgradImage: FunctionComponent = () => {
 	return (
 		<Img
 			fluid={img.placeholderImage.childImageSharp.fluid}
-			className={css.base}
+			className={CssWorkSectionImage}
 		/>
 	);
 };
 
-export default UpgradImage;
+export default SgImage;
