@@ -4,7 +4,7 @@ author: Ajit Singh Kamal
 ---
 
 import { graphql } from "gatsby";
-import { Seo, Banner } from "../components";
+import { Seo, Banner, Work } from "../components";
 
 <Seo title={props.pageContext.frontmatter.title}></Seo>
 <Banner
@@ -24,12 +24,51 @@ import { Seo, Banner } from "../components";
 	scalability of the product.
 </Banner>
 
+<Work
+	from="2019"
+	name="UpGrad"
+	shade={1}
+	image={props.data.upgrad && props.data.upgrad.childImageSharp.fluid}
+/>
+
+<Work
+	from="2018"
+	to="2019"
+	name="Cyware"
+	shade={2}
+	image={props.data.cyware && props.data.cyware.childImageSharp.fluid}
+/>
+
 export const pageQuery = graphql`
 	query {
 		site {
 			siteMetadata {
 				emailLink
 				linkedinLink
+			}
+		}
+		upgrad: file(relativePath: { eq: "work/upgrad.png" }) {
+			childImageSharp {
+				fluid {
+					src
+					srcSet
+					base64
+					aspectRatio
+					originalImg
+					sizes
+				}
+			}
+		}
+		cyware: file(relativePath: { eq: "work/cyware.png" }) {
+			childImageSharp {
+				fluid {
+					src
+					srcSet
+					base64
+					aspectRatio
+					originalImg
+					sizes
+				}
 			}
 		}
 	}

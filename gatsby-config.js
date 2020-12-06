@@ -46,6 +46,33 @@ module.exports = {
 	plugins: [
 		`gatsby-plugin-react-helmet`,
 		`gatsby-plugin-theme-ui`,
+		`gatsby-plugin-emotion`,
+		`gatsby-transformer-sharp`,
+		`gatsby-plugin-sharp`,
+		`gatsby-remark-images`,
+		{
+			resolve: `gatsby-plugin-mdx`,
+			options: {
+				defaultLayouts: {
+					default: require.resolve(`./src/layouts/site-layout/index.tsx`),
+				},
+				gatsbyRemarkPlugins: [
+					{
+						resolve: `gatsby-remark-images`,
+						options: {
+							maxWidth: 750,
+						},
+					},
+				],
+			},
+		},
+		{
+			resolve: `gatsby-source-filesystem`,
+			options: {
+				name: `images`,
+				path: `${__dirname}/src/images`,
+			},
+		},
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
@@ -53,24 +80,6 @@ module.exports = {
 				path: `${__dirname}/src/pages/`,
 			},
 		},
-		{
-			resolve: `gatsby-source-filesystem`,
-			options: {
-				name: `images`,
-				path: `${__dirname}/src/assets/images`,
-			},
-		},
-		{
-			resolve: `gatsby-plugin-mdx`,
-			options: {
-				defaultLayouts: {
-					default: require.resolve(`./src/layouts/site-layout/index.tsx`),
-				},
-			},
-		},
-		`gatsby-transformer-sharp`,
-		`gatsby-plugin-sharp`,
-		`gatsby-plugin-emotion`,
 		{
 			resolve: `gatsby-plugin-manifest`,
 			options: {
