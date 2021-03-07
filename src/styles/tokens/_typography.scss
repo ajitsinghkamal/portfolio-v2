@@ -1,0 +1,15 @@
+$-scale: 14, 16, 18, 20, 22, 24, 28, 32;
+$-defaultSize: 16;
+
+@mixin fontScale() {
+	@each $size in $-scale {
+		--ft-#{$size}: #{$size / $-defaultSize}rem;
+	}
+}
+
+@mixin fontFamily() {
+	--ft-base: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+		Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	--ft-sans: overpass, var(--ft-base);
+	--ft-serif: muli, var(--ft-base);
+}

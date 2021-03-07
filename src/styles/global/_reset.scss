@@ -38,22 +38,10 @@ h1 {
 	font-size: 2em;
 }
 
-small {
-	font-size: 80%;
+p {
+	margin: 0;
 }
-sub,
-sup {
-	font-size: 75%;
-	line-height: 0;
-	position: relative;
-	vertical-align: baseline;
-}
-sub {
-	bottom: -0.25em;
-}
-sup {
-	top: -0.5em;
-}
+
 img {
 	border-style: none;
 }
@@ -171,7 +159,6 @@ ul {
 img,
 dl,
 dd,
-p,
 figure,
 noscript,
 iframe,

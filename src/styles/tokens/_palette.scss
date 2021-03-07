@@ -1,0 +1,19 @@
+/* CSS HEX */
+@mixin palette() {
+	--dark: #0e1024;
+	--y-in-mn-blue: #355070;
+	--chinese-violet: #6d597a;
+	--rose-dust: #b56576;
+	--candy-pink: #e56b6f;
+	--tumbleweed: #eaac8b;
+	--neutral: #fff;
+	--blue02: #331965;
+	--blue03: #2020a1;
+	--gradient: linear-gradient(45deg, #331965, #2020a1);
+}
+
+@mixin themeDefault() {
+	--c-bg: var(--dark);
+	--c-primary: var(--rose-dust);
+	--c-text: var(--neutral);
+}
