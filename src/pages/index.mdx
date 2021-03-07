@@ -4,70 +4,46 @@ author: Ajit Singh Kamal
 ---
 
 import { graphql } from "gatsby";
-import { Seo, Banner, Work } from "../components";
+import { Seo, Banner, Work, Social, Flex } from "../components";
 
 <Seo title={props.pageContext.frontmatter.title}></Seo>
-<Banner
-	greeting="Hello Everyone!!"
-	title={props.pageContext.frontmatter.author}
-	links={[
-		{ url: props.data.site.siteMetadata.emailLink, label: "Email", id: "mail" },
-		{
-			url: props.data.site.siteMetadata.linkedinLink,
-			label: "LinkedIn",
-			id: "linkedin",
-		},
-	]}
->
-	A UI / UX developer based in India. I create rich and accessible user
-	experiences for the web with a keep focus on the aesthetics, semantics, and
-	scalability of the product.
+<Banner greeting="Hello!! world">
+	<h1>I am Ajit</h1>
+	<p>I am a UI/UX developer and I make cool stuff for web.</p>
 </Banner>
-
-<Work
-	from="2019"
-	name="UpGrad"
-	shade={1}
-	image={props.data.upgrad && props.data.upgrad.childImageSharp.fluid}
-/>
-
-<Work
-	from="2018"
-	to="2019"
-	name="Cyware"
-	shade={2}
-	image={props.data.cyware && props.data.cyware.childImageSharp.fluid}
-/>
+<Social navData={Object.values(props.data.site.siteMetadata.social)} />
+<Work portfolio={props.data.site.siteMetadata.work} />
 
 export const pageQuery = graphql`
 	query {
 		site {
 			siteMetadata {
-				emailLink
-				linkedinLink
-			}
-		}
-		upgrad: file(relativePath: { eq: "work/upgrad.png" }) {
-			childImageSharp {
-				fluid {
-					src
-					srcSet
-					base64
-					aspectRatio
-					originalImg
-					sizes
+				work {
+					from
+					to
+					name
 				}
-			}
-		}
-		cyware: file(relativePath: { eq: "work/cyware.png" }) {
-			childImageSharp {
-				fluid {
-					src
-					srcSet
-					base64
-					aspectRatio
-					originalImg
-					sizes
+				social {
+					linkedin {
+						url
+						label
+					}
+					mail {
+						url
+						label
+					}
+					git {
+						url
+						label
+					}
+					codepen {
+						url
+						label
+					}
+					stackoverflow {
+						url
+						label
+					}
 				}
 			}
 		}

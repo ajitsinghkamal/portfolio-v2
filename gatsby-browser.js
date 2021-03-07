@@ -1,1 +1,1 @@
-import "./src/styles/global/index.scss";
+import "./src/styles/index.scss";

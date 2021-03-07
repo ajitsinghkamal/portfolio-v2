@@ -3,49 +3,65 @@ module.exports = {
 		title: `Ajit's Dev Blog`,
 		description: `Ajit Singh Kamal is a UI/UX engineer based in India. With more than 4 years of experience in working with frontend technologies, he excels in UI development and creating aesthetically pleasing and intutive user experiences for the web.`,
 		author: `@AjitsinghKamal`,
-		repoLink: `https://github.com/AjitsinghKamal/portfolio-v2`,
-		emailLink: `mailto:ajitskamal@gmail.com`,
-		linkedinLink: `https://linkedin.com/in/ajitsinghkamal/`,
-		codepenLink: `https://codepen.io/AjitsinghKamal/`,
-		stackoverLink: `https://stackoverflow.com/users/6517778/`,
-		githubLink: `github.com/AjitsinghKamal/`,
+		greeting: "Hello World",
+		social: {
+			repo: {
+				url: `https://github.com/AjitsinghKamal/portfolio-v2`,
+				label: `Repo`,
+			},
+			linkedin: {
+				url: `https://linkedin.com/in/ajitsinghkamal/`,
+				label: `LinkedIn`,
+			},
+			mail: {
+				url: `mailto:ajitskamal@gmail.com`,
+				label: `Email`,
+			},
+			git: {
+				url: `github.com/AjitsinghKamal/`,
+				label: `Github`,
+			},
+			codepen: {
+				url: `https://codepen.io/AjitsinghKamal/`,
+				label: `Codepen`,
+			},
+			stackoverflow: {
+				url: `https://stackoverflow.com/users/6517778/`,
+				label: `Stackoverflow`,
+			},
+		},
 		work: [
 			{
-				intro: `Currently working with India's largest higher education startup and
-				building an online classroom platform, ensuring education for the
-				quarantined world.`,
 				from: `2019`,
 				name: `UpGrad`,
-				image: `upgrad`,
 			},
 			{
-				intro: `Build, optimise and refactor. Worked on multiple products while working
-				with this young startup operating in the field of cyber threat intelligence.`,
+				from: `gif`,
+				name: `threejs-codepen`,
+			},
+			{
 				from: `2018`,
 				to: `2019`,
 				name: `Cyware`,
-				image: `cyware`,
 			},
 			{
-				intro: `Developed the online portfolio for Mr.Sudeep Gandhi, an exceptional calligraphist, and helped him expand his online reach.`,
+				from: `ww-codepen`,
+				name: `ww-codepen`,
+			},
+			{
 				from: `2018`,
 				to: `2018`,
 				name: `Sudeep Gandhi's Portfolio`,
-				image: `sg`,
 			},
 			{
-				intro: `A startup working towards increasing the reach of real-estate marketplace to the public which was later acquired
-				by Olx. Worked with multiple products using multiple tech, which included Angular and PHP`,
 				from: `2017`,
 				to: `2018`,
 				name: `HDFC Red`,
-				image: `red`,
 			},
 		],
 	},
 	plugins: [
 		`gatsby-plugin-react-helmet`,
-		`gatsby-plugin-theme-ui`,
 		`gatsby-plugin-emotion`,
 		`gatsby-transformer-sharp`,
 		`gatsby-plugin-sharp`,
@@ -54,7 +70,9 @@ module.exports = {
 			resolve: `gatsby-plugin-mdx`,
 			options: {
 				defaultLayouts: {
-					default: require.resolve(`./src/layouts/site-layout/index.tsx`),
+					default: require.resolve(
+						`./src/layouts/site-layout/index.tsx`
+					),
 				},
 				gatsbyRemarkPlugins: [
 					{
@@ -109,9 +127,6 @@ module.exports = {
 		},
 		{
 			resolve: `gatsby-plugin-sass`,
-			options: {
-				implementation: require("sass"),
-			},
 		},
 		{
 			resolve: "gatsby-plugin-react-svg",
