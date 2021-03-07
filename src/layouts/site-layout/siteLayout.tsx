@@ -1,5 +1,6 @@
+/** @jsx  jsx */
+import { jsx, css } from "@emotion/react";
 import React, { PropsWithChildren } from "react";
-import { cx, css } from "@emotion/css";
 
 import Header from "./siteLayoutHeader";
 import Background from "../../components/bg";
@@ -8,16 +9,16 @@ type Props = { passedRef?: React.Ref<HTMLDivElement> };
 
 function SiteLayout({ children, passedRef }: PropsWithChildren<Props>) {
 	return (
-		<>
+		<React.Fragment>
 			<Background />
-			<div className={cx(CssBase)}>
+			<div css={CssBase}>
 				<Header />
-				<main className={cx(CssContent)} ref={passedRef}>
+				<main css={CssContent} ref={passedRef}>
 					{children}
 				</main>
 				{/* <Footer /> */}
 			</div>
-		</>
+		</React.Fragment>
 	);
 }
 

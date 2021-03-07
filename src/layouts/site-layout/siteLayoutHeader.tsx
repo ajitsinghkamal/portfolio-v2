@@ -1,5 +1,6 @@
+/** @jsx  jsx */
+import { jsx, css } from "@emotion/react";
 import { useStaticQuery, graphql } from "gatsby";
-import { css } from "@emotion/css";
 
 import IconWave from "@assets/svgs/wave.svg";
 
@@ -16,17 +17,17 @@ function Header() {
 		`
 	);
 	return (
-		<header className={CssRoot}>
-			<div className={CssContainer}>
+		<header css={CssRoot}>
+			<div css={CssContainer}>
 				<div
-					className={css`
+					css={css`
 						display: flex;
 						align-items: center;
 					`}
 				>
 					<IconWave />
 					<span
-						className={css`
+						css={css`
 							margin-left: 1em;
 							font-size: var(--ft-14);
 						`}
