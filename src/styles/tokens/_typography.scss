@@ -1,6 +1,6 @@
 @import "~@fontsource/b612-mono/400.css";
 @import "~@fontsource/b612-mono/700.css";
-$-scale: 14, 16, 18, 20, 22, 24, 28, 32, 38, 48;
+$-scale: 11, 14, 16, 18, 20, 22, 24, 28, 32, 38, 48;
 $-defaultSize: 16;
 
 @mixin fontScale() {

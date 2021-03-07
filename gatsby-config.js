@@ -18,7 +18,7 @@ module.exports = {
 				label: `Email`,
 			},
 			git: {
-				url: `github.com/AjitsinghKamal/`,
+				url: `https://github.com/AjitsinghKamal/`,
 				label: `Github`,
 			},
 			codepen: {
@@ -34,29 +34,40 @@ module.exports = {
 			{
 				from: `2019`,
 				name: `UpGrad`,
+				tech: ["JS", "React", "Vue", "Backbone"],
+				link: `https://upgrad.com/enterprise`,
 			},
 			{
 				from: `gif`,
 				name: `threejs-codepen`,
+				tech: ["ThreeJS"],
+				link: `https://codepen.io/AjitsinghKamal/full/VrLYLG`,
 			},
 			{
 				from: `2018`,
 				to: `2019`,
 				name: `Cyware`,
+				tech: ["TS", "Vue", "Nuxt", "Angular"],
+				link: `https://cyware.com`,
 			},
 			{
 				from: `ww-codepen`,
 				name: `ww-codepen`,
+				tech: ["CSS"],
+				link: `https://codepen.io/AjitsinghKamal/full/EXoaNJ`,
 			},
 			{
 				from: `2018`,
 				to: `2018`,
-				name: `Sudeep Gandhi's Portfolio`,
+				name: `SudeepGandhi.com`,
+				tech: ["JS", "HTML", "CSS", "Firebase"],
+				link: `https://sudeepgandhi.com`,
 			},
 			{
 				from: `2017`,
 				to: `2018`,
 				name: `HDFC Red`,
+				tech: ["TS", "Angular2"],
 			},
 		],
 	},

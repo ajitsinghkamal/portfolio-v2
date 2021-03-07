@@ -2,11 +2,14 @@ import { PropsWithChildren } from "react";
 import Pen from "./pen";
 import { css, cx } from "@emotion/css";
 import ThreejsGif from "../images/threejs-pen.gif";
+import Strip from "./strip";
 
 interface Portfolio {
 	name: string;
 	from: string;
 	to: string;
+	tech: string[];
+	link?: string;
 }
 
 type Props = {
@@ -18,15 +21,35 @@ function WorkSection({ portfolio }: PropsWithChildren<Props>) {
 		<section className={cssWork}>
 			{portfolio.map((gig: Portfolio) => {
 				return gig.from === "gif" ? (
-					<div className={cx(cssGig, cssGif)} key={gig.from}>
-						<img src={ThreejsGif} />
-					</div>
+					<a
+						target="_blank"
+						referrerPolicy="no-referrer"
+						className={cx(cssGig, cssGif)}
+						key={gig.from}
+						href={gig.link}
+					>
+						<img src={ThreejsGif} alt={gig.name} />
+						<Strip tech={gig.tech} isPen={true} />
+					</a>
 				) : gig.from === "ww-codepen" ? (
-					<div className={cx(cssGig, cssPen)} key={gig.from}>
+					<a
+						target="_blank"
+						referrerPolicy="no-referrer"
+						className={cx(cssGig, cssPen)}
+						key={gig.from}
+						href={gig.link}
+					>
 						<Pen />
-					</div>
+						<Strip tech={gig.tech} isPen={true} />
+					</a>
 				) : (
-					<div className={cssGig} key={gig.name}>
+					<a
+						className={cssGig}
+						key={gig.name}
+						href={gig.link}
+						target="_blank"
+						referrerPolicy="no-referrer"
+					>
 						<div className={cssYrWrap}>
 							<small className={cssYr}>{gig.from}</small>
 							<small className={cssYr}>
@@ -35,14 +58,19 @@ function WorkSection({ portfolio }: PropsWithChildren<Props>) {
 						</div>
 						<p
 							className={css`
-								font-size: ${gig.name && gig.name.length < 20
+								font-size: ${gig.name && gig.name.length < 14
 									? "var(--ft-28)"
 									: "var(--ft-20)"};
 							`}
 						>
 							{gig.name}
 						</p>
-					</div>
+						<Strip
+							tech={gig.tech}
+							isPen={false}
+							hasLink={!!gig.link}
+						/>
+					</a>
 				);
 			})}
 		</section>
@@ -54,6 +82,9 @@ const cssWork = css`
 	flex-flow: row wrap;
 	margin: 3em -0.5em 1em;
 `;
+const cssStrip = css`
+	opacity: 0;
+`;
 const cssGig = css`
 	position: relative;
 	padding: 1em;
@@ -64,6 +95,19 @@ const cssGig = css`
 	margin: 0.5em;
 	min-width: 240px;
 	max-width: 300px;
+	color: inherit;
+	text-decoration: none;
+	& > div:last-child {
+		transform: translateY(100%);
+		opacity: 0;
+	}
+
+	&:hover {
+		> div:last-child {
+			transform: translateY(0);
+			opacity: 1;
+		}
+	}
 `;
 
 const cssPen = css`
