@@ -1,7 +1,7 @@
 module.exports = {
 	siteMetadata: {
 		title: `Ajit's Dev Blog`,
-		description: `Ajit Singh Kamal is a UI/UX engineer based in India. With more than 4 years of experience in working with frontend technologies, he excels in UI development and creating aesthetically pleasing and intutive user experiences for the web.`,
+		description: `Ajit Singh Kamal is a UI/UX engineer. He excels in UI development and creating aesthetically pleasing and intutive user experiences for the web.`,
 		author: `@AjitsinghKamal`,
 		greeting: "Hello World",
 		social: {
@@ -118,7 +118,7 @@ module.exports = {
 				background_color: `#663399`,
 				theme_color: `#663399`,
 				display: `minimal-ui`,
-				icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+				icon: `src/images/favicon.png`, // This path is relative to the root of the site.
 			},
 		},
 		{
