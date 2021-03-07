@@ -1,17 +1,12 @@
 {
-	"include": [
-		"src/**/*"
-	],
+	"include": ["src/**/*"],
 	"compilerOptions": {
 		"target": "esnext",
 		"module": "commonjs",
-		"lib": [
-			"dom",
-			"es2017"
-		],
+		"lib": ["dom", "es2017"],
 		"allowJs": true,
 		"checkJs": true,
-		"jsx": "react",
+		"jsx": "react-jsx",
 		"strict": true,
 		"esModuleInterop": true,
 		"experimentalDecorators": true,
@@ -20,36 +15,16 @@
 		"skipLibCheck": true,
 		"baseUrl": ".",
 		"paths": {
-			"@pages/*": [
-				"src/pages/*"
-			],
-			"@component/*": [
-				"src/components/*",
-			],
-			"@components": [
-				"src/components/index",
-			],
-			"@layouts/*": [
-				"src/layouts/*"
-			],
-			"@utils/*": [
-				"src/utils/*"
-			],
-			"@templates/*": [
-				"src/templates/*"
-			],
-			"@assets/*": [
-				"src/assets/*"
-			],
-			"@styles/*": [
-				"src/styles/*"
-			],
-			"@src/*": [
-				"src/*"
-			]
+			"@pages/*": ["src/pages/*"],
+			"@component/*": ["src/components/*"],
+			"@components": ["src/components/index"],
+			"@layouts/*": ["src/layouts/*"],
+			"@utils/*": ["src/utils/*"],
+			"@templates/*": ["src/templates/*"],
+			"@assets/*": ["src/assets/*"],
+			"@styles/*": ["src/styles/*"],
+			"@src/*": ["src/*"]
 		}
 	},
-	"files": [
-		"custom.d.ts"
-	]
+	"files": ["types/global.d.ts", "types/custom.d.ts"]
 }
