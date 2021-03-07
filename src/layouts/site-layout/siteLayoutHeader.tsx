@@ -18,13 +18,20 @@ function Header() {
 	return (
 		<header className={CssRoot}>
 			<div className={CssContainer}>
-				<div>
+				<div
+					className={css`
+						display: flex;
+						align-items: center;
+					`}
+				>
+					<IconWave />
 					<span
 						className={css`
-							margin-right: 1em;
+							margin-left: 1em;
+							font-size: var(--ft-14);
 						`}
 					>
-						<IconWave />
+						{site.siteMetadata.greeting}
 					</span>
 				</div>
 			</div>
@@ -34,18 +41,14 @@ function Header() {
 
 //#region Styles
 const CssRoot = css`
-	position: fixed;
-	right: 0;
-	top: 0;
-	left: 0;
-	z-index: 1;
 	width: 100%;
 `;
 
 const CssContainer = css`
 	margin: 0 auto;
-	max-width: var(--container);
+	width: var(--container);
 	display: flex;
+	max-width: 90%
 	justify-content: space-between;
 	height: 80px;
 	align-items: center;

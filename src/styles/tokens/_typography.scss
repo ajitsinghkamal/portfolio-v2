@@ -1,4 +1,6 @@
-$-scale: 14, 16, 18, 20, 22, 24, 28, 32;
+@import "~@fontsource/b612-mono/400.css";
+@import "~@fontsource/b612-mono/700.css";
+$-scale: 14, 16, 18, 20, 22, 24, 28, 32, 38, 48;
 $-defaultSize: 16;
 
 @mixin fontScale() {
@@ -8,8 +10,5 @@ $-defaultSize: 16;
 }
 
 @mixin fontFamily() {
-	--ft-base: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-		Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-	--ft-sans: overpass, var(--ft-base);
-	--ft-serif: muli, var(--ft-base);
+	--ft-base: "B612 Mono", Fira Mono, monospace;
 }

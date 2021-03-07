@@ -50,10 +50,9 @@ function WorkSection({ portfolio }: PropsWithChildren<Props>) {
 }
 
 const cssWork = css`
-	margin-top: 5em;
 	display: flex;
 	flex-flow: row wrap;
-	margin: 5em -0.5em 1em;
+	margin: 3em -0.5em 1em;
 `;
 const cssGig = css`
 	position: relative;

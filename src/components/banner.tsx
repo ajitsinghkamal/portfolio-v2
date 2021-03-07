@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from "react";
+import { PropsWithChildren } from "react";
 import { cx, css } from "@emotion/css";
 
 interface Link {
@@ -19,17 +19,15 @@ type Props = {
 };
 
 function Banner({ children }: PropsWithChildren<Props>) {
-	return <section css={cx(CssBase)}>
-		{children}
-		</section>;
+	return <section className={cx(CssBase)}>{children}</section>;
 }
 
 const CssBase = css`
 	position: relative;
-	display: flex;
-	flex-flow: column;
-	justify-content: center;
-	padding: 8em 0;
+	h1 {
+		margin-bottom: 0.5em;
+		font-size: var(--ft-48);
+	}
 `;
 
 export default Banner;

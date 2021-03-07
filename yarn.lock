@@ -1216,6 +1216,11 @@
     ts-node "^9"
     tslib "^2"
 
+"@fontsource/b612-mono@^4.2.2":
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/@fontsource/b612-mono/-/b612-mono-4.2.2.tgz#6757337539f0f06bbb1c6a16c5bf7fe6900d28eb"
+  integrity sha512-oXFSb34qXXOjhWzhoNTJ3vKYCP8O4dXK25nrHIcvjcOyiNkYjQMKkwgf/TAOM/14IxWZ3mwCVAL7j23tlVK8GA==
+
 "@graphql-tools/batch-execute@^7.0.0":
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/@graphql-tools/batch-execute/-/batch-execute-7.0.0.tgz#e79d11bd5b39f29172f6ec2eafa71103c6a6c85b"
