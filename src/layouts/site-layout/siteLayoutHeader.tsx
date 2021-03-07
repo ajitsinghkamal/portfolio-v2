@@ -48,7 +48,7 @@ const CssContainer = css`
 	margin: 0 auto;
 	width: var(--container);
 	display: flex;
-	max-width: 90%
+	max-width: 90%;
 	justify-content: space-between;
 	height: 80px;
 	align-items: center;

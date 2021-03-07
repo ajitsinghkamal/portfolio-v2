@@ -33,9 +33,16 @@ const cssNavBtn = css`
 	opacity: 0.8;
 	display: inline-block;
 	transition: background 0.3s, color 0.3s, opacity 0.3s;
-	&:hover {
+	&:active {
 		background: #f1f1f1;
 		color: #000;
 		opacity: 1;
+	}
+	@media (hover: hover) {
+		&:hover {
+			background: #f1f1f1;
+			color: #000;
+			opacity: 1;
+		}
 	}
 `;

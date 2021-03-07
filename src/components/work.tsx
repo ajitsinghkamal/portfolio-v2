@@ -97,15 +97,16 @@ const cssGig = css`
 	max-width: 300px;
 	color: inherit;
 	text-decoration: none;
-	& > div:last-child {
-		transform: translateY(100%);
-		opacity: 0;
-	}
-
-	&:hover {
-		> div:last-child {
-			transform: translateY(0);
-			opacity: 1;
+	@media (hover: hover) {
+		& > div:last-child {
+			transform: translateY(100%);
+			opacity: 0;
+		}
+		&:hover {
+			> div:last-child {
+				transform: translateY(0);
+				opacity: 1;
+			}
 		}
 	}
 `;
