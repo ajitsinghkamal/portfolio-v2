@@ -17,6 +17,7 @@ function SEO({ description = ``, lang = `en`, meta = [], title }: Props) {
 						title
 						description
 						author
+						image
 					}
 				}
 			}
@@ -39,6 +40,10 @@ function SEO({ description = ``, lang = `en`, meta = [], title }: Props) {
 				{
 					property: `og:title`,
 					content: title,
+				},
+				{
+					property: `og:image`,
+					content: site.siteMetadata.image,
 				},
 				{
 					property: `og:description`,

@@ -4,6 +4,7 @@ module.exports = {
 		description: `Ajit Singh Kamal is a UI/UX engineer. He excels in UI development and creating aesthetically pleasing and intutive user experiences for the web.`,
 		author: `@AjitsinghKamal`,
 		greeting: "Hello World",
+		image: "/thumbnail.png",
 		social: {
 			repo: {
 				url: `https://github.com/AjitsinghKamal/portfolio-v2`,
