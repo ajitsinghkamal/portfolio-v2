@@ -1,5 +1,6 @@
+/** @jsx jsx */
+import { jsx, css } from "@emotion/react";
 import Button from "./button";
-import { css } from "@emotion/css";
 
 interface SocialLink {
 	url: string;
@@ -11,7 +12,7 @@ type Props = {
 };
 export default function Social({ navData }: Props) {
 	return (
-		<nav className={cssNav}>
+		<nav css={cssNav}>
 			{navData.map((item: SocialLink) => (
 				<Button link={item.url} key={item.label} wrapClass={cssNavBtn}>
 					{item.label}

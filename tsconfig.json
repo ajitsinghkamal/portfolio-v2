@@ -24,7 +24,8 @@
 			"@assets/*": ["src/assets/*"],
 			"@styles/*": ["src/styles/*"],
 			"@src/*": ["src/*"]
-		}
+		},
+		"types": ["@emotion/react/types/css-prop"]
 	},
 	"files": ["types/global.d.ts", "types/custom.d.ts"]
 }

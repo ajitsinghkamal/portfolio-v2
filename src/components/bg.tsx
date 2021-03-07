@@ -1,4 +1,5 @@
-import { css } from "@emotion/css";
+/** @jsx jsx */
+import { jsx, css } from "@emotion/react";
 import Loadable from "@loadable/component";
 
 const LoadableBgBlob = Loadable(() => import("./blob"));
@@ -6,7 +7,7 @@ const LoadableBgBlob = Loadable(() => import("./blob"));
 export default function Background() {
 	return (
 		<div
-			className={css`
+			css={css`
 				position: fixed;
 				top: 0;
 				left: 0;

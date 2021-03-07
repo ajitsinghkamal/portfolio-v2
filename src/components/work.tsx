@@ -1,6 +1,7 @@
+/** @jsx jsx */
+import { jsx, css } from "@emotion/react";
 import { PropsWithChildren } from "react";
 import Pen from "./pen";
-import { css, cx } from "@emotion/css";
 import ThreejsGif from "../images/threejs-pen.gif";
 import Strip from "./strip";
 
@@ -18,13 +19,16 @@ type Props = {
 
 function WorkSection({ portfolio }: PropsWithChildren<Props>) {
 	return (
-		<section className={cssWork}>
+		<section css={cssWork}>
 			{portfolio.map((gig: Portfolio) => {
 				return gig.from === "gif" ? (
 					<a
 						target="_blank"
 						referrerPolicy="no-referrer"
-						className={cx(cssGig, cssGif)}
+						css={css`
+							${cssGig};
+							${cssGif};
+						`}
 						key={gig.from}
 						href={gig.link}
 					>
@@ -35,7 +39,10 @@ function WorkSection({ portfolio }: PropsWithChildren<Props>) {
 					<a
 						target="_blank"
 						referrerPolicy="no-referrer"
-						className={cx(cssGig, cssPen)}
+						css={css`
+							${cssGig};
+							${cssPen};
+						`}
 						key={gig.from}
 						href={gig.link}
 					>
@@ -44,20 +51,18 @@ function WorkSection({ portfolio }: PropsWithChildren<Props>) {
 					</a>
 				) : (
 					<a
-						className={cssGig}
+						css={cssGig}
 						key={gig.name}
 						href={gig.link}
 						target="_blank"
 						referrerPolicy="no-referrer"
 					>
-						<div className={cssYrWrap}>
-							<small className={cssYr}>{gig.from}</small>
-							<small className={cssYr}>
-								{gig.to || "Current"}
-							</small>
+						<div css={cssYrWrap}>
+							<small css={cssYr}>{gig.from}</small>
+							<small css={cssYr}>{gig.to || "Current"}</small>
 						</div>
 						<p
-							className={css`
+							css={css`
 								font-size: ${gig.name && gig.name.length < 14
 									? "var(--ft-28)"
 									: "var(--ft-20)"};
@@ -82,9 +87,7 @@ const cssWork = css`
 	flex-flow: row wrap;
 	margin: 3em -0.5em 1em;
 `;
-const cssStrip = css`
-	opacity: 0;
-`;
+
 const cssGig = css`
 	position: relative;
 	padding: 1em;

@@ -1,10 +1,10 @@
+/** @jsx jsx */
+import { jsx, css } from "@emotion/react";
 import { useRef, useMemo } from "react";
 import { Canvas, useFrame } from "react-three-fiber";
 import type { Mesh } from "three";
 import * as THREE from "three";
 import noise from "@utils/noise";
-
-import { css } from "@emotion/css";
 
 function Blob({ spikeFreq = 3, ...props }) {
 	const mesh = useRef<Mesh>();
@@ -48,7 +48,7 @@ function Blob({ spikeFreq = 3, ...props }) {
 export default function BackgroundWithBlob() {
 	return (
 		<Canvas
-			className={css`
+			css={css`
 				position: relative;
 				width: 100%;
 				height: 100%;

@@ -1,4 +1,5 @@
-import { css } from "@emotion/css";
+/** @jsx jsx */
+import { jsx, css } from "@emotion/react";
 import IconLink from "@assets/svgs/link.svg";
 
 //#region Types
@@ -11,16 +12,14 @@ type Props = {
 
 function Strip({ tech = [], isPen, hasLink = true }: Props) {
 	return (
-		<div className={CssBase}>
+		<div css={CssBase}>
 			{tech.map((item) => (
-				<span className={CssTech} key={item}>
+				<span css={CssTech} key={item}>
 					{item}
 				</span>
 			))}
-			{hasLink && (
-				<span className={CssVisit}>Visit {isPen ? "Pen" : ""}</span>
-			)}
-			{hasLink && <IconLink width={18} height={18} className={CssIcon} />}
+			{hasLink && <span css={CssVisit}>Visit {isPen ? "Pen" : ""}</span>}
+			{hasLink && <IconLink width={18} height={18} css={CssIcon} />}
 		</div>
 	);
 }

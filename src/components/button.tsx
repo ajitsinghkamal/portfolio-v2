@@ -1,12 +1,14 @@
-import React, { PropsWithChildren } from "react";
-import { css, cx } from "@emotion/css";
+/** @jsx jsx */
+import { jsx, css, SerializedStyles } from "@emotion/react";
+import { PropsWithChildren } from "react";
 
 //#region Types
 type Props = {
 	type?: "button" | "submit" | "reset" | undefined;
 	link?: string;
 	onClick?: () => void;
-} & PropTypeWithWrappingClass;
+	wrapClass?: SerializedStyles;
+};
 //#endregion Types
 
 function Button({
@@ -14,14 +16,17 @@ function Button({
 	children,
 	link = "",
 	type = "button",
-	wrapClass = "",
+	wrapClass,
 	...rest
 }: PropsWithChildren<Props>) {
 	return link ? (
 		<a
 			{...rest}
 			href={link}
-			className={cx(CssBase, wrapClass)}
+			css={css`
+				${CssBase};
+				${wrapClass}
+			`}
 			rel="noreferrer noopener"
 			target="_blank"
 		>
@@ -30,7 +35,10 @@ function Button({
 	) : (
 		<button
 			onClick={onClick}
-			className={cx(CssBase, wrapClass)}
+			css={css`
+				${CssBase};
+				${wrapClass}
+			`}
 			type={type}
 			{...rest}
 		>
@@ -50,7 +58,8 @@ const CssBase = css`
 	&:hover {
 		color: var(--primary),
 		opacity: 1,
-	}`;
+	}
+	`;
 
 //#endregion Styles
 

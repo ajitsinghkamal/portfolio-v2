@@ -1,5 +1,6 @@
+/** @jsx jsx */
+import { jsx, css } from "@emotion/react";
 import { PropsWithChildren } from "react";
-import { cx, css } from "@emotion/css";
 
 interface Link {
 	url: string;
@@ -19,7 +20,7 @@ type Props = {
 };
 
 function Banner({ children }: PropsWithChildren<Props>) {
-	return <section className={cx(CssBase)}>{children}</section>;
+	return <section css={CssBase}>{children}</section>;
 }
 
 const CssBase = css`
