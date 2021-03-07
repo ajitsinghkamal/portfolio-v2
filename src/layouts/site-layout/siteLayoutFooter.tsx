@@ -1,7 +1,3 @@
-/** @jsx jsx */
-
-import React, { PropsWithChildren } from "react";
-import { jsx, useThemeUI } from "theme-ui";
 import { useStaticQuery, graphql } from "gatsby";
 
 import { Button } from "@components";
@@ -9,34 +5,34 @@ import { Button } from "@components";
 type Props = {};
 
 function Footer(props: Props) {
-	const context = useThemeUI();
-	const { theme, colorMode, setColorMode } = context;
+	// const context = useThemeUI();
+	// const { theme, colorMode, setColorMode } = context;
 
-	const { site } = useStaticQuery(
-		graphql`
-			query {
-				site {
-					siteMetadata {
-						repoLink
-						emailLink
-					}
-				}
-			}
-		`
-	);
+	// const { site } = useStaticQuery(
+	// 	graphql`
+	// 		query {
+	// 			site {
+	// 				siteMetadata {
+	// 					repoLink
+	// 					emailLink
+	// 				}
+	// 			}
+	// 		}
+	// 	`
+	// );
 
-	const changeTheme = () => {
-		if (!setColorMode) {
-			return;
-		} else if (colorMode === "light") {
-			setColorMode("dark");
-		} else {
-			setColorMode("light");
-		}
-	};
+	// const changeTheme = () => {
+	// 	if (!setColorMode) {
+	// 		return;
+	// 	} else if (colorMode === "light") {
+	// 		setColorMode("dark");
+	// 	} else {
+	// 		setColorMode("light");
+	// 	}
+	// };
 	return (
 		<footer {...props}>
-			<div sx={CssRoot}>
+			{/* <div sx={CssRoot}>
 				<Button
 					sx={CssContactBtn}
 					link={site.siteMetadata.emailLink}
@@ -54,7 +50,7 @@ function Footer(props: Props) {
 				>
 					README.md
 				</Button>
-			</div>
+			</div> */}
 		</footer>
 	);
 }

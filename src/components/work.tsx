@@ -1,77 +1,94 @@
-/** @jsx jsx */
+import { PropsWithChildren } from "react";
+import Pen from "./pen";
+import { css, cx } from "@emotion/css";
+import ThreejsGif from "../images/threejs-pen.gif";
 
-import React, { PropsWithChildren } from "react";
-import { jsx, Flex, Theme, ThemeUICSSObject } from "theme-ui";
-import Img, { FluidObject } from "gatsby-image";
-
-type Props = {
+interface Portfolio {
 	name: string;
 	from: string;
-	to?: string;
-	shade?: number;
-	image?: FluidObject;
+	to: string;
+}
+
+type Props = {
+	portfolio: Portfolio[];
 };
 
-function WorkSection({
-	name,
-	from,
-	to,
-	image,
-	shade = 0,
-}: PropsWithChildren<Props>) {
+function WorkSection({ portfolio }: PropsWithChildren<Props>) {
 	return (
-		<section className="spacer">
-			<div sx={CssBase}>
-				<p sx={CssTitle}>{name}</p>
-				<Flex>
-					<div sx={CssYear}>
-						{from}
-						<small> - </small>
-						{to || "Current"}
+		<section className={cssWork}>
+			{portfolio.map((gig: Portfolio) => {
+				return gig.from === "gif" ? (
+					<div className={cx(cssGig, cssGif)} key={gig.from}>
+						<img src={ThreejsGif} />
 					</div>
-					<div
-						sx={{
-							flex: "1 0 80%",
-							borderRadius: "10px",
-							overflow: "hidden",
-							boxShadow: (theme) =>
-								`-65px -58px 0px 0 ${
-									theme.colors ? theme.colors[`muted${shade}`] : "transparent"
-								}`,
-						}}
-					>
-						{image && <Img fluid={image} />}
+				) : gig.from === "ww-codepen" ? (
+					<div className={cx(cssGig, cssPen)} key={gig.from}>
+						<Pen />
 					</div>
-				</Flex>
-			</div>
+				) : (
+					<div className={cssGig} key={gig.name}>
+						<div className={cssYrWrap}>
+							<small className={cssYr}>{gig.from}</small>
+							<small className={cssYr}>
+								{gig.to || "Current"}
+							</small>
+						</div>
+						<p
+							className={css`
+								font-size: ${gig.name && gig.name.length < 20
+									? "var(--ft-28)"
+									: "var(--ft-20)"};
+							`}
+						>
+							{gig.name}
+						</p>
+					</div>
+				);
+			})}
 		</section>
 	);
 }
 
-const CssBase: ThemeUICSSObject = {
-	position: "relative",
-	pt: "2em",
-	pb: "3em",
-};
+const cssWork = css`
+	margin-top: 5em;
+	display: flex;
+	flex-flow: row wrap;
+	margin: 5em -0.5em 1em;
+`;
+const cssGig = css`
+	position: relative;
+	padding: 1em;
+	background: rgba(0, 0, 0, 0.4);
+	overflow: hidden;
+	height: 150px;
+	flex: 1 0 calc(33% - 2em);
+	margin: 0.5em;
+	min-width: 240px;
+	max-width: 300px;
+`;
 
-const CssTitle: ThemeUICSSObject = {
-	fontSize: 3,
-	fontVariationSettings: `"wght" 730`,
-	mb: "0.3em",
-	position: "relative",
-	zIndex: 1,
-	fontFamily: "heading",
-};
-const CssYear: ThemeUICSSObject = {
-	fontSize: 1,
-	m: "0 0em 0.5em 0.2em",
-	position: "relative",
-	zIndex: 1,
-	flex: "0 0 20%",
-	fontVariant: "tabular-nums",
-	small: {
-		margin: "0 3px",
-	},
-};
+const cssPen = css`
+	padding: 0;
+`;
+const cssGif = css`
+	padding: 0;
+	& > img {
+		margin: 0;
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+	}
+`;
 
+const cssYrWrap = css`
+	margin: 0;
+	font-size: var(--ft-16);
+	font-variant: tabular-nums;
+`;
+const cssYr = css`
+	&:first-child:after {
+		content: "-";
+		margin: 0 5px;
+	}
+`;
 export default WorkSection;

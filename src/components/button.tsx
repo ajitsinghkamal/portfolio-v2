@@ -1,54 +1,56 @@
-/** @jsx jsx */
-
 import React, { PropsWithChildren } from "react";
-import { jsx } from "theme-ui";
-import { SerializedStyles } from "@emotion/react";
+import { css, cx } from "@emotion/css";
 
+//#region Types
 type Props = {
-	type?: string;
+	type?: "button" | "submit" | "reset" | undefined;
 	link?: string;
-	styl?: SerializedStyles;
 	onClick?: () => void;
-};
+} & PropTypeWithWrappingClass;
+//#endregion Types
 
 function Button({
-	type = "",
-	link = "",
 	onClick,
 	children,
-	styl,
+	link = "",
+	type = "button",
+	wrapClass = "",
+	...rest
 }: PropsWithChildren<Props>) {
 	return link ? (
 		<a
-			css={styl}
+			{...rest}
 			href={link}
-			sx={CssBase}
+			className={cx(CssBase, wrapClass)}
 			rel="noreferrer noopener"
 			target="_blank"
 		>
 			{children}
 		</a>
 	) : (
-		<button css={styl} onClick={onClick} sx={CssBase}>
+		<button
+			onClick={onClick}
+			className={cx(CssBase, wrapClass)}
+			type={type}
+			{...rest}
+		>
 			{children}
 		</button>
 	);
 }
 
 //#region Styles
-const CssBase = {
-	borderRadius: "10px",
-	fontSize: 2,
-	color: "text",
-	p: "0.5em 1.5em",
-	textDecoration: "none",
-	bg: "none",
-	transition: "background 0.3s, color 0.3s, opacity 0.3s",
-	"&:hover": {
-		color: "primary",
+const CssBase = css`
+	font-size: var(--ft-18);
+	padding: 0.5em;
+	cursor: pointer;
+	text-decoration: none;
+	background: none;
+	transition: background 0.3s, color 0.3s, opacity 0.3s;
+	&:hover {
+		color: var(--primary),
 		opacity: 1,
-	},
-};
+	}`;
 
 //#endregion Styles
 
