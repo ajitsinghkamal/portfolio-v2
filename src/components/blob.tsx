@@ -1,10 +1,12 @@
 import { useRef, useMemo } from "react";
-import { useFrame } from "react-three-fiber";
+import { Canvas, useFrame } from "react-three-fiber";
 import type { Mesh } from "three";
 import * as THREE from "three";
 import noise from "@utils/noise";
 
-export default function Blob({ spikeFreq = 3, ...props }) {
+import { css } from "@emotion/css";
+
+function Blob({ spikeFreq = 3, ...props }) {
 	const mesh = useRef<Mesh>();
 	const PerlinNoise = useMemo(() => new noise(0), []);
 	useFrame(() => {
@@ -40,5 +42,19 @@ export default function Blob({ spikeFreq = 3, ...props }) {
 			<sphereGeometry args={[1, 128, 128]} />
 			<meshNormalMaterial />
 		</mesh>
+	);
+}
+
+export default function BackgroundWithBlob() {
+	return (
+		<Canvas
+			className={css`
+				position: relative;
+				width: 100%;
+				height: 100%;
+			`}
+		>
+			<Blob position={[4, 1, 0]} scale={[3.5, 3.5, 1.5]} />
+		</Canvas>
 	);
 }

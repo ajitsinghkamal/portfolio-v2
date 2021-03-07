@@ -1,7 +1,7 @@
-import { Canvas } from "react-three-fiber";
 import { css } from "@emotion/css";
+import Loadable from "@loadable/component";
 
-import Blob from "./blob";
+const LoadableBgBlob = Loadable(() => import("./blob"));
 
 export default function Background() {
 	return (
@@ -20,15 +20,7 @@ export default function Background() {
 				);
 			`}
 		>
-			<Canvas
-				className={css`
-					position: relative;
-					width: 100%;
-					height: 100%;
-				`}
-			>
-				<Blob position={[4, 1, 0]} scale={[3.5, 3.5, 1.5]} />
-			</Canvas>
+			<LoadableBgBlob />
 		</div>
 	);
 }
