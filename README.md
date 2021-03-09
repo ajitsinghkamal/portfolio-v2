@@ -1,5 +1,13 @@
 
-This portfolio is created using Gatsby.
+This portfolio is meant to showcase my past experiences and UI development skills.
+
+_Screenshot for the lazy_
+
+<img width="1431" alt="Screenshot 2021-03-09 at 20 17 10" src="https://user-images.githubusercontent.com/18217523/110488420-75c36200-8114-11eb-99c9-a210a68e3287.png">
+
+
+
+The project is built with Gatsby. 
 
 ## 🧐 Why Gatsby
 
@@ -74,5 +82,7 @@ Styling is done with emotion.
 
     The site is now running at `http://localhost:8000`!
 
+ 
+ 
  
 
