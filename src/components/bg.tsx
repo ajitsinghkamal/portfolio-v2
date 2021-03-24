@@ -1,10 +1,15 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/react";
+import { useState, useEffect } from "react";
 import Loadable from "@loadable/component";
 
 const LoadableBgBlob = Loadable(() => import("./blob"));
 
 export default function Background() {
+	const [startBlobRender, shouldStartBlobRender] = useState(false);
+	useEffect(() => {
+		shouldStartBlobRender(true);
+	});
 	return (
 		<div
 			css={css`
@@ -21,7 +26,7 @@ export default function Background() {
 				);
 			`}
 		>
-			<LoadableBgBlob />
+			{startBlobRender && <LoadableBgBlob />}
 		</div>
 	);
 }
