@@ -39,7 +39,7 @@ module.exports = {
 				link: `https://upgrad.com/enterprise`,
 			},
 			{
-				from: `gif`,
+				from: `https://res.cloudinary.com/dwpjvs0lj/image/upload/v1616596555/afzqmy.gif`,
 				name: `threejs-codepen`,
 				tech: ["ThreeJS"],
 				link: `https://codepen.io/AjitsinghKamal/full/VrLYLG`,

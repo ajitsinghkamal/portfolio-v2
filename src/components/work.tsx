@@ -1,8 +1,7 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/react";
-import { PropsWithChildren } from "react";
+import { PropsWithChildren, useEffect, useState, useCallback } from "react";
 import Pen from "./pen";
-import ThreejsGif from "../images/threejs-pen.gif";
 import Strip from "./strip";
 
 interface Portfolio {
@@ -18,10 +17,17 @@ type Props = {
 };
 
 function WorkSection({ portfolio }: PropsWithChildren<Props>) {
+	const [renderGif, setGifRenderState] = useState(0);
+	useEffect(() => {
+		setGifRenderState(1);
+	}, []);
+	const onGifLoad = useCallback(() => {
+		setGifRenderState(2);
+	}, []);
 	return (
 		<section css={cssWork}>
 			{portfolio.map((gig: Portfolio) => {
-				return gig.from === "gif" ? (
+				return /\.gif$/.test(gig.from) ? (
 					<a
 						target="_blank"
 						referrerPolicy="no-referrer"
@@ -32,7 +38,17 @@ function WorkSection({ portfolio }: PropsWithChildren<Props>) {
 						key={gig.from}
 						href={gig.link}
 					>
-						<img src={ThreejsGif} alt={gig.name} />
+						{renderGif ? (
+							<img
+								src={gig.from}
+								alt={gig.name}
+								onLoad={onGifLoad}
+								css={css`
+									transition: opacity 0.6s;
+									opacity: ${renderGif > 1 ? "1" : "0"};
+								`}
+							/>
+						) : null}
 						<Strip tech={gig.tech} isPen={true} />
 					</a>
 				) : gig.from === "ww-codepen" ? (
