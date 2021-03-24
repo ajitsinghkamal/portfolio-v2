@@ -78,6 +78,7 @@ module.exports = {
 		`gatsby-transformer-sharp`,
 		`gatsby-plugin-sharp`,
 		`gatsby-remark-images`,
+		`gatsby-plugin-webpack-bundle-analyser-v2`,
 		{
 			resolve: `gatsby-plugin-mdx`,
 			options: {
@@ -134,6 +135,7 @@ module.exports = {
 					"@assets": `src/assets/`,
 					"@src": `src/`,
 					"@styles": `src/styles`,
+					three$: `three-exports.js`,
 				},
 			},
 		},
