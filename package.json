@@ -39,6 +39,7 @@
 		"three": "^0.125.2"
 	},
 	"devDependencies": {
+		"@types/mdx-js__react": "^1.5.3",
 		"gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.21",
 		"prettier": "2.2.1"
 	},

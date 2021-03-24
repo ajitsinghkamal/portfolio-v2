@@ -3,20 +3,24 @@ import { jsx, css } from "@emotion/react";
 import React, { PropsWithChildren } from "react";
 
 import Header from "./siteLayoutHeader";
-import Background from "../../components/bg";
+import { Seo, Bg } from "@components";
+
+import { MDXProvider } from "@mdx-js/react";
 
 type Props = { passedRef?: React.Ref<HTMLDivElement> };
 
+const shortcodes = { Seo };
 function SiteLayout({ children, passedRef }: PropsWithChildren<Props>) {
 	return (
 		<React.Fragment>
-			<Background />
+			<Bg />
 			<div css={CssBase}>
 				<Header />
 				<main css={CssContent} ref={passedRef}>
-					{children}
+					<MDXProvider components={shortcodes}>
+						{children}
+					</MDXProvider>
 				</main>
-				{/* <Footer /> */}
 			</div>
 		</React.Fragment>
 	);

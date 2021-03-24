@@ -4,9 +4,9 @@ author: Ajit Singh Kamal
 ---
 
 import { graphql } from "gatsby";
-import { Seo, Banner, Work, Social } from "../components";
+import { Banner, Work, Social } from "@components";
 
-<Seo title={props.pageContext.frontmatter.title}></Seo>
+<Seo title={props.pageContext.frontmatter.title} />
 <Banner greeting="Hello!! world">
 	<h1>I am Ajit</h1>
 	<p>I build stuff for the web.</p>
