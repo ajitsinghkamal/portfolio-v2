@@ -11,8 +11,11 @@ export { Texture } from "three/src/textures/Texture.js";
 export { Object3D } from "three/src/core/Object3D.js";
 export { Raycaster } from "three/src/core/Raycaster.js";
 export { Layers } from "three/src/core/Layers.js";
-export { Ray } from "three/src/math/Ray.js";
 export { Color } from "three/src/math/Color.js";
 export { Vector3 } from "three/src/math/Vector3.js";
 export { Vector2 } from "three/src/math/Vector2.js";
-export * from "three/src/constants.js";
+export {
+	ACESFilmicToneMapping,
+	PCFSoftShadowMap,
+	sRGBEncoding,
+} from "three/src/constants.js";
