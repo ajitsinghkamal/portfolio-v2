@@ -133,7 +133,7 @@ const cssYrWrap = css`
 	font-variant: tabular-nums;
 `;
 const cssYr = css`
-	&:first-child:after {
+	&:first-of-type:after {
 		content: "-";
 		margin: 0 5px;
 	}
