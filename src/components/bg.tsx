@@ -9,7 +9,11 @@ export default function Background() {
 	const [startBlobRender, shouldStartBlobRender] = useState(false);
 
 	useEffect(() => {
-		const onLoadHandler = () => shouldStartBlobRender(true);
+		console.log("efct-load");
+		const onLoadHandler = () => {
+			console.log("load");
+			shouldStartBlobRender(true);
+		};
 		window.addEventListener("load", onLoadHandler);
 		return () => {
 			window.removeEventListener("load", onLoadHandler);
