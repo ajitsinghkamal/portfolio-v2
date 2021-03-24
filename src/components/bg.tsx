@@ -7,9 +7,14 @@ const LoadableBgBlob = Loadable(() => import("./blob"));
 
 export default function Background() {
 	const [startBlobRender, shouldStartBlobRender] = useState(false);
+
 	useEffect(() => {
-		shouldStartBlobRender(true);
-	});
+		const onLoadHandler = () => shouldStartBlobRender(true);
+		window.addEventListener("load", onLoadHandler);
+		return () => {
+			window.removeEventListener("load", onLoadHandler);
+		};
+	}, []);
 	return (
 		<div
 			css={css`
