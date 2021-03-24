@@ -1,15 +1,22 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/react";
-import { useRef, useMemo, useState } from "react";
+import { useRef, useMemo, useState, useCallback } from "react";
 import { Canvas, useFrame } from "react-three-fiber";
 import type { Mesh } from "three";
 import { Vector3 } from "three";
 import noise from "@utils/noise";
 
-function Blob({ spikeFreq = 3, ...props }) {
+type Props = {
+	spikeFreq?: number;
+	afterObjectRender: () => void;
+	[x: string]: any;
+};
+
+function Blob({ spikeFreq = 3, afterObjectRender, ...props }: Props) {
 	const mesh = useRef<Mesh>();
 	const PerlinNoise = useMemo(() => new noise(0), []);
 	const [vector] = useState(() => new Vector3());
+
 	useFrame(() => {
 		const time = performance.now() * 0.0009;
 		if (mesh.current && mesh.current.geometry.isBufferGeometry) {
@@ -35,7 +42,7 @@ function Blob({ spikeFreq = 3, ...props }) {
 	});
 
 	return (
-		<mesh ref={mesh} {...props}>
+		<mesh ref={mesh} {...props} onUpdate={afterObjectRender}>
 			<sphereGeometry args={[1, 128, 128]} />
 			<meshNormalMaterial />
 		</mesh>
@@ -43,15 +50,25 @@ function Blob({ spikeFreq = 3, ...props }) {
 }
 
 export default function BackgroundWithBlob() {
+	const [appeared, setAppearance] = useState(false);
+	const afterObjectRender = useCallback(() => {
+		!appeared && setAppearance(true);
+	}, [appeared]);
 	return (
 		<Canvas
 			css={css`
 				position: relative;
 				width: 100%;
 				height: 100%;
+				opacity: ${appeared ? "1" : "0"};
+				transition: opacity 0.6s;
 			`}
 		>
-			<Blob position={[4, 1, 0]} scale={[3.5, 3.5, 1.5]} />
+			<Blob
+				position={[4, 1, 0]}
+				scale={[3.5, 3.5, 1.5]}
+				afterObjectRender={afterObjectRender}
+			/>
 		</Canvas>
 	);
 }
