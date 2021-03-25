@@ -4,14 +4,12 @@ import "./src/styles/index.scss";
 
 import wrapWithProvider, { store } from "./src/state/provider";
 
-console.log("in-browser-config");
-
 export const wrapRootElement = wrapWithProvider;
+
+window.addEventListener("load", () => {
+	store.dispatch({ type: "loaded", payload: true });
+});
 
 export const onInitialClientRender = () => {
 	store.dispatch({ type: "mounted", payload: true });
-};
-export const onRouteUpdate = () => {
-	console.log("inaaa");
-	store.dispatch({ type: "loaded", payload: true });
 };
