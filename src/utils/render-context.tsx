@@ -34,8 +34,10 @@ function renderContextReducer(state: RenderContextType, action: ActionType) {
 }
 function RenderContextProvider({ children }: PropsWithChildren<{}>) {
 	const [state, dispatch] = useReducer(renderContextReducer, initialState);
+	console.log(state);
 	useLayoutEffect(() => {
 		const onLoadHandler = () => {
+			console.log("loaded");
 			dispatch({ type: "loaded", payload: true });
 		};
 		window.addEventListener("load", onLoadHandler);
