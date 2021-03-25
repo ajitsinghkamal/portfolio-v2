@@ -6,14 +6,13 @@ import Header from "./siteLayoutHeader";
 import { Seo, Bg } from "@components";
 
 import { MDXProvider } from "@mdx-js/react";
-import { RenderContextProvider } from "@utils/render-context";
 
 type Props = { passedRef?: React.Ref<HTMLDivElement> };
 
 const shortcodes = { Seo };
 function SiteLayout({ children, passedRef }: PropsWithChildren<Props>) {
 	return (
-		<RenderContextProvider>
+		<React.Fragment>
 			<Bg />
 			<div css={CssBase}>
 				<Header />
@@ -23,7 +22,7 @@ function SiteLayout({ children, passedRef }: PropsWithChildren<Props>) {
 					</MDXProvider>
 				</main>
 			</div>
-		</RenderContextProvider>
+		</React.Fragment>
 	);
 }
 

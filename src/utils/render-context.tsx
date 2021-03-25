@@ -21,7 +21,9 @@ const initialState: RenderContextType = {
 	mounted: false,
 	loaded: false,
 };
-export const RenderContext = createContext<RenderContextType>(initialState);
+export const RenderContext = createContext<RenderContextType | null>(
+	initialState
+);
 
 function renderContextReducer(state: RenderContextType, action: ActionType) {
 	switch (action.type) {
@@ -34,7 +36,6 @@ function renderContextReducer(state: RenderContextType, action: ActionType) {
 }
 function RenderContextProvider({ children }: PropsWithChildren<{}>) {
 	const [state, dispatch] = useReducer(renderContextReducer, initialState);
-	console.log(state);
 	useLayoutEffect(() => {
 		const onLoadHandler = () => {
 			console.log("loaded");
