@@ -34,7 +34,6 @@ function renderContextReducer(state: RenderContextType, action: ActionType) {
 }
 function RenderContextProvider({ children }: PropsWithChildren<{}>) {
 	const [state, dispatch] = useReducer(renderContextReducer, initialState);
-	console.log(state);
 	useLayoutEffect(() => {
 		const onLoadHandler = () => {
 			dispatch({ type: "loaded", payload: true });
