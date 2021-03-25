@@ -1,6 +1,8 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/react";
-import { PropsWithChildren, useEffect, useState, useCallback } from "react";
+import { PropsWithChildren, useState, useCallback } from "react";
+import { useRenderContext } from "@utils/render-context";
+
 import Pen from "./pen";
 import Strip from "./strip";
 
@@ -17,13 +19,9 @@ type Props = {
 };
 
 function WorkSection({ portfolio }: PropsWithChildren<Props>) {
-	const [renderGif, setGifRenderState] = useState(0);
-	useEffect(() => {
-		setGifRenderState(1);
-	}, []);
-	const onGifLoad = useCallback(() => {
-		setGifRenderState(2);
-	}, []);
+	const [renderGif, setGifRenderState] = useState(false);
+	const { mounted } = useRenderContext();
+
 	return (
 		<section css={cssWork}>
 			{portfolio.map((gig: Portfolio) => {
@@ -38,14 +36,16 @@ function WorkSection({ portfolio }: PropsWithChildren<Props>) {
 						key={gig.from}
 						href={gig.link}
 					>
-						{renderGif ? (
+						{mounted ? (
 							<img
 								src={gig.from}
 								alt={gig.name}
-								onLoad={onGifLoad}
+								onLoad={() => {
+									setGifRenderState(true);
+								}}
 								css={css`
 									transition: opacity 0.6s;
-									opacity: ${renderGif > 1 ? "1" : "0"};
+									opacity: ${renderGif ? "1" : "0"};
 								`}
 							/>
 						) : null}

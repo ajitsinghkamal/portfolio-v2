@@ -1,24 +1,13 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/react";
-import { useState, useEffect } from "react";
 import Loadable from "@loadable/component";
+import { useRenderContext } from "@utils/render-context";
 
 const LoadableBgBlob = Loadable(() => import("./blob"));
 
 export default function Background() {
-	const [startBlobRender, shouldStartBlobRender] = useState(false);
+	const { loaded } = useRenderContext();
 
-	useEffect(() => {
-		console.log("efct-load");
-		const onLoadHandler = () => {
-			console.log("load");
-			shouldStartBlobRender(true);
-		};
-		window.addEventListener("load", onLoadHandler);
-		return () => {
-			window.removeEventListener("load", onLoadHandler);
-		};
-	}, []);
 	return (
 		<div
 			css={css`
@@ -35,7 +24,7 @@ export default function Background() {
 				);
 			`}
 		>
-			{startBlobRender && <LoadableBgBlob />}
+			{loaded && <LoadableBgBlob />}
 		</div>
 	);
 }
