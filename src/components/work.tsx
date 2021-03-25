@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/react";
-import { PropsWithChildren, useState, useCallback } from "react";
-import { useRenderContext } from "@utils/render-context";
+import { PropsWithChildren, useState } from "react";
+import { useSelector } from "react-redux";
 
 import Pen from "./pen";
 import Strip from "./strip";
@@ -20,7 +20,7 @@ type Props = {
 
 function WorkSection({ portfolio }: PropsWithChildren<Props>) {
 	const [renderGif, setGifRenderState] = useState(false);
-	const { mounted } = useRenderContext();
+	const mounted = useSelector((state) => state.mounted);
 
 	return (
 		<section css={cssWork}>

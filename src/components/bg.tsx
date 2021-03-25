@@ -1,12 +1,11 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/react";
 import Loadable from "@loadable/component";
-import { useRenderContext } from "@utils/render-context";
-
+import { useSelector } from "react-redux";
 const LoadableBgBlob = Loadable(() => import("./blob"));
 
 export default function Background() {
-	const { loaded } = useRenderContext();
+	const loaded = useSelector((state) => state.loaded);
 
 	return (
 		<div
