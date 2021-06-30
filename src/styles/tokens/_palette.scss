@@ -1,0 +1,9 @@
+/* CSS HEX */
+@mixin palette() {
+	--dark400: #090909;
+	--white600: #f2f2f2;
+	--white400: #d8d8d8;
+	--gradient: linear-gradient(45deg, #331965, #2020a1);
+	--c-bg: rgba(30, 39, 107, 1);
+	--c-text: var(--white600);
+}

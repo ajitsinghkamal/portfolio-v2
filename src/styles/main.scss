@@ -1,0 +1,36 @@
+@use "reset";
+@use "tokens/typography";
+@use "tokens/palette";
+@use "tokens/spaces";
+
+:root {
+	@include typography.fontScale();
+	@include typography.fontFamily();
+	@include palette.palette();
+	@include spaces.bounds();
+}
+
+body {
+	margin: 0;
+	font-weight: 400;
+	line-height: 2;
+	font-size: 1.125rem;
+	font-variation-settings: 'wght' 435;
+	word-wrap: break-word;
+	font-kerning: normal;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-moz-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
+	-ms-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
+	-webkit-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
+	font-feature-settings: 'kern', 'liga', 'clig', 'calt';
+	font-family: var(--ft-base);
+	color: var(--c-text);
+	background: var(--c-bg);
+}
+
+@media only screen and (max-width: 480px) {
+	html {
+		font-size: 100%;
+	}
+}

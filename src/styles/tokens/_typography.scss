@@ -1,0 +1,12 @@
+$-scale: 11, 14, 16, 18, 20, 22, 24, 28, 32, 38, 48;
+$-defaultSize: 16;
+
+@mixin fontScale() {
+	@each $size in $-scale {
+		--ft-#{$size}: #{$size / $-defaultSize}rem;
+	}
+}
+
+@mixin fontFamily() {
+	--ft-base: "B612 Mono", Fira Mono, monospace;
+}
