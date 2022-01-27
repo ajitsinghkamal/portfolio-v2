@@ -36,7 +36,7 @@
 		"react-helmet": "^6.0.0",
 		"react-three-fiber": "5.3.17",
 		"sass": "^1.30.0",
-		"three": "^0.125.2"
+		"three": "^0.137.0"
 	},
 	"devDependencies": {
 		"@types/mdx-js__react": "^1.5.3",
