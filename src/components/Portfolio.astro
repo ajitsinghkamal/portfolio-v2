@@ -1,0 +1,20 @@
+---
+import { works } from "~/fixtures";
+import Tile from "./Tile.astro";
+---
+<section class="works">
+	{works.map((work) => <article class="works__gig">
+		<Tile {...work} />
+	</article>)}
+</section>
+
+<style lang="scss">
+	.works {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(240px, 1fr));
+		grid-gap: 1rem;
+		&__gig {
+			aspect-ratio: 16/9;
+		}
+	}
+</style>

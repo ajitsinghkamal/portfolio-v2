@@ -1,0 +1,40 @@
+---
+import { socialLinks } from "~/fixtures";
+const links = Object.entries(socialLinks);
+---
+
+<nav class="root">
+	{links.map(([,link]) => (
+		<a href={link.url} class="navigation">
+			{link.label}
+		</a>
+	))}
+</nav>
+
+<style lang="scss">
+	.root {
+		margin-left: -0.3em;
+		margin-top: 0.5em;
+	}
+	.navigation {
+		font-size: var(--ft-14);
+		color: #f1f1f1;
+		margin-right: 1em;
+		opacity: 0.8;
+		display: inline-block;
+		transition: background 0.3s, color 0.3s, opacity 0.3s;
+		&:active {
+			background: #f1f1f1;
+			color: #000;
+			opacity: 1;
+		}
+		@media (hover: hover) {
+			&:hover {
+				background: #f1f1f1;
+				color: #000;
+				opacity: 1;
+			}
+		}
+	}
+</style>
+
